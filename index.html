@@ -1,499 +1,948 @@
 <!DOCTYPE html>
 <html lang="fr" id="html-root">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GINETTE Star Girl Beauty Cosmetics — Douala</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Italiana&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --g1:#F5CC45;--g2:#D4A017;--g3:#A87800;
-      --o1:#FFAA40;--o2:#E87B0C;--o3:#C45800;
-      --y1:#FFE066;
-      --dark:#110800;--dark2:#1E0F00;--dark3:#3A1900;
-      --cream:#FFFBF0;--warm:#FFFDF6;--pale:#FEF5D0;--soft:#FDE9A0;
-      --muted:#8A7050;--bdr:rgba(212,160,23,.18);
-      --cta:linear-gradient(135deg,#F5CC45,#E87B0C);
-      --cta-alt:linear-gradient(135deg,#E87B0C,#C45800);
-      --cta-sh:rgba(212,160,23,.45);
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark2);overflow-x:hidden}
-    ::-webkit-scrollbar{width:5px}
-    ::-webkit-scrollbar-track{background:var(--pale)}
-    ::-webkit-scrollbar-thumb{background:var(--g2);border-radius:10px}
-    .cinzel{font-family:'Cinzel',serif}
-    .italiana{font-family:'Italiana',serif}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GINETTE Star Girl Beauty Cosmetics — Douala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Italiana&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --g1:#F5CC45;--g2:#D4A017;--g3:#A87800;
+  --o1:#FFAA40;--o2:#E87B0C;--o3:#C45800;
+  --y1:#FFE066;
+  --dk:#110800;--dk2:#1E0F00;--dk3:#3A1900;
+  --cr:#FFFBF0;--warm:#FFFDF6;--pale:#FEF5D0;--soft:#FDE9A0;
+  --muted:#8A7050;--bdr:rgba(212,160,23,.18);
+  --cta:linear-gradient(135deg,#F5CC45,#E87B0C);
+  --cta2:linear-gradient(135deg,#E87B0C,#C45800);
+  --cta-sh:rgba(212,160,23,.42);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Jost',sans-serif;background:var(--cr);color:var(--dk2);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--pale)}
+::-webkit-scrollbar-thumb{background:var(--g2);border-radius:10px}
+img{display:block;max-width:100%}
 
-    /* NAV */
-    #nav{position:fixed;top:0;left:0;right:0;z-index:300;transition:all .35s}
-    #nav.solid{background:rgba(255,251,240,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--bdr),0 4px 24px rgba(212,160,23,.1)}
-    .nl{font-size:.84rem;font-weight:500;letter-spacing:.04em;color:var(--dark2);text-decoration:none;transition:color .2s}
-    .nl:hover{color:var(--g2)}
-    .lang-btn{font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;padding:5px 10px;border-radius:6px;border:1.5px solid var(--bdr);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
-    .lang-btn.active,.lang-btn:hover{background:var(--g2);border-color:var(--g2);color:#fff}
-    .nav-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:50px;background:var(--cta);color:var(--dark);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-decoration:none;font-family:'Cinzel',serif;box-shadow:0 3px 14px var(--cta-sh);transition:transform .2s,box-shadow .2s}
-    .nav-cta:hover{transform:scale(1.05);box-shadow:0 5px 20px var(--cta-sh)}
+/* ── TYPOGRAPHY ── */
+.cinzel{font-family:'Cinzel',serif}
+.italiana{font-family:'Italiana',serif}
 
-    /* HERO */
-    .hero{min-height:100svh;background:radial-gradient(ellipse 90% 60% at 65% 20%,rgba(249,200,32,.18) 0%,transparent 55%),radial-gradient(ellipse 55% 75% at 5% 88%,rgba(232,123,12,.15) 0%,transparent 55%),linear-gradient(150deg,#110800 0%,#1E0F00 25%,#3A1900 52%,#8A5500 74%,#C8820A 88%,#F5CC45 100%);position:relative;overflow:hidden;display:flex;align-items:center}
-    .hero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none}
-    .blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(55px)}
-    .orbit{position:absolute;border-radius:50%;border:1px solid rgba(245,204,69,.1);pointer-events:none;animation:orbit-spin linear infinite}
-    @keyframes orbit-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-    .star-p{position:absolute;pointer-events:none;animation:star-rise linear infinite;opacity:.3}
-    @keyframes star-rise{0%{transform:translateY(0) rotate(0deg);opacity:.3}60%{opacity:.65}100%{transform:translateY(-120vh) rotate(720deg);opacity:0}}
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  transition:background .32s,box-shadow .32s;
+}
+#nav.solid{
+  background:rgba(255,251,240,.97);
+  backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 var(--bdr),0 4px 24px rgba(212,160,23,.1);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 clamp(14px,3vw,32px);
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo-ico{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--cta);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;flex-shrink:0;
+  box-shadow:0 3px 12px var(--cta-sh);
+}
+.nav-logo-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:900;color:var(--dk2);letter-spacing:.07em;line-height:1}
+.nav-logo-sub{font-family:'Italiana',serif;font-size:.72rem;color:var(--g2);letter-spacing:.1em;line-height:1.2}
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
+.nl{font-size:.8rem;font-weight:500;letter-spacing:.04em;color:var(--dk2);text-decoration:none;transition:color .2s}
+.nl:hover{color:var(--g2)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.lang-sw{display:flex;align-items:center;border:1.5px solid var(--bdr);border-radius:8px;overflow:hidden}
+.lang-btn{
+  font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  padding:5px 9px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all .18s;
+}
+.lang-btn.active,.lang-btn:hover{background:var(--g2);color:#fff}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 18px;border-radius:50px;
+  background:var(--cta);color:var(--dk);
+  font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;letter-spacing:.06em;
+  text-decoration:none;box-shadow:0 3px 14px var(--cta-sh);
+  transition:transform .2s,box-shadow .2s;white-space:nowrap;
+}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 5px 20px var(--cta-sh)}
+.ham{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:5px;
+}
+.ham span{display:block;width:22px;height:2px;background:var(--dk2);border-radius:2px;transition:all .25s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#mnav{
+  display:none;
+  background:rgba(255,251,240,.98);
+  backdrop-filter:blur(14px);
+  border-top:1px solid var(--bdr);
+}
+#mnav.open{display:block}
+.mnav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:16px clamp(14px,3vw,32px) 20px;
+  display:flex;flex-direction:column;gap:0;
+}
+.mnav-inner a{
+  padding:13px 0;font-size:.9rem;font-weight:500;
+  border-bottom:1px solid var(--bdr);color:var(--dk2);text-decoration:none;
+  transition:color .2s;
+}
+.mnav-inner a:last-of-type{border-bottom:none}
+.mnav-inner a:hover{color:var(--g2)}
+.mnav-lang{display:flex;align-items:center;gap:8px;padding-top:14px}
+.mnav-lang-lbl{font-family:'Cinzel',serif;font-size:.65rem;color:var(--muted);letter-spacing:.1em}
+.mnav-cta{
+  margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px;border-radius:50px;background:var(--cta);
+  color:var(--dk);font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;
+  text-decoration:none;letter-spacing:.06em;
+}
 
-    .brand-main{font-family:'Cinzel',serif;font-weight:900;letter-spacing:.1em;font-size:clamp(2rem,6vw,5rem);color:#fff;text-transform:uppercase;line-height:.95}
-    .brand-tag{font-family:'Italiana',serif;font-size:clamp(1rem,2.8vw,1.9rem);letter-spacing:.22em;color:var(--g1);display:block;margin-top:6px}
-    .brand-city{font-family:'Cinzel',serif;font-size:clamp(.6rem,1.4vw,.82rem);letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-top:8px}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .ham{display:flex}
+}
+@media(max-width:400px){.nav-logo-sub{display:none}}
 
-    .shimmer{background:linear-gradient(90deg,var(--g1) 0%,#fff 35%,var(--y1) 55%,var(--o1) 80%,var(--g1) 100%);background-size:280% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sg 3.5s linear infinite}
-    @keyframes sg{from{background-position:0% center}to{background-position:280% center}}
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  background:
+    radial-gradient(ellipse 85% 60% at 65% 20%,rgba(249,200,32,.16),transparent 55%),
+    radial-gradient(ellipse 50% 70% at 5% 88%,rgba(232,123,12,.13),transparent 55%),
+    linear-gradient(150deg,#110800 0%,#1E0F00 25%,#3A1900 50%,#8A5500 72%,#C8820A 87%,#F5CC45 100%);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+  padding-top:60px;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+}
+.blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(55px)}
+.orbit{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(245,204,69,.1);
+  pointer-events:none;
+  animation:orbit-spin linear infinite;
+}
+@keyframes orbit-spin{
+  from{transform:translate(-50%,-50%) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+.star-p{
+  position:absolute;pointer-events:none;
+  animation:star-rise linear infinite;opacity:.3;
+}
+@keyframes star-rise{
+  0%{transform:translateY(0) rotate(0);opacity:.3}
+  60%{opacity:.65}
+  100%{transform:translateY(-120vh) rotate(720deg);opacity:0}
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  padding:clamp(48px,8vw,96px) clamp(14px,4vw,32px) clamp(80px,10vw,110px);
+  position:relative;z-index:10;
+}
+.hero-content{max-width:560px}
 
-    .hero-head{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.4rem,4vw,3.2rem);color:#fff;line-height:1.1}
-    .it{font-family:'Italiana',serif;font-style:italic;color:var(--g1);font-size:1.2em}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);border-radius:50px;padding:7px 18px;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);border-radius:50px;
+  padding:7px 18px;font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.88);margin-bottom:24px;
+}
+.brand-main{
+  font-family:'Cinzel',serif;font-weight:900;
+  font-size:clamp(2.2rem,8vw,5.2rem);
+  color:#fff;text-transform:uppercase;line-height:.95;letter-spacing:.1em;
+}
+.brand-tag{
+  font-family:'Italiana',serif;
+  font-size:clamp(1rem,3.2vw,2rem);
+  letter-spacing:.2em;color:var(--g1);display:block;margin-top:8px;
+}
+.brand-city{
+  font-family:'Cinzel',serif;
+  font-size:clamp(.56rem,1.4vw,.78rem);
+  letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);display:block;margin-top:7px;
+}
+.shimmer{
+  background:linear-gradient(90deg,var(--g1) 0%,#fff 35%,var(--y1) 55%,var(--o1) 80%,var(--g1) 100%);
+  background-size:280% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:sg 3.5s linear infinite;
+}
+@keyframes sg{from{background-position:0% center}to{background-position:280% center}}
 
-    .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;background:var(--cta);color:var(--dark);font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 24px rgba(212,160,23,.42);transition:transform .22s,box-shadow .22s}
-    .btn-gold:hover{transform:scale(1.06);box-shadow:0 8px 32px rgba(212,160,23,.58)}
-    .btn-order{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;background:var(--cta-alt);color:#fff;font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 24px rgba(232,123,12,.38);transition:transform .22s,box-shadow .22s}
-    .btn-order:hover{transform:scale(1.06);box-shadow:0 8px 32px rgba(232,123,12,.52)}
+.hero-sub{
+  color:rgba(255,255,255,.65);
+  font-size:clamp(.88rem,2vw,1rem);
+  line-height:1.85;max-width:460px;margin:20px 0 32px;
+}
+.hero-sub strong{color:var(--g1)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:clamp(36px,6vw,52px)}
 
-    /* FEATURES */
-    .feat{background:var(--warm);border:1px solid var(--bdr);border-radius:18px;padding:26px 20px;text-align:center;transition:transform .28s,box-shadow .28s}
-    .feat:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(212,160,23,.15)}
-    .feat-ico{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--pale),var(--soft));display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin:0 auto 14px}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:50px;
+  background:var(--cta);color:var(--dk);
+  font-family:'Cinzel',serif;font-size:.75rem;font-weight:700;letter-spacing:.08em;
+  text-decoration:none;box-shadow:0 6px 24px rgba(212,160,23,.42);
+  transition:transform .22s,box-shadow .22s;white-space:nowrap;
+}
+.btn-gold:hover{transform:scale(1.06);box-shadow:0 8px 32px rgba(212,160,23,.58)}
+.btn-order{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:50px;
+  background:var(--cta2);color:#fff;
+  font-family:'Cinzel',serif;font-size:.75rem;font-weight:700;letter-spacing:.08em;
+  text-decoration:none;box-shadow:0 6px 24px rgba(232,123,12,.38);
+  transition:transform .22s,box-shadow .22s;white-space:nowrap;
+}
+.btn-order:hover{transform:scale(1.06);box-shadow:0 8px 32px rgba(232,123,12,.52)}
 
-    /* CATEGORY TABS */
-    .ctab{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:50px;border:1.5px solid rgba(249,200,32,.25);background:var(--warm);color:var(--muted);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .22s;white-space:nowrap;font-family:'Jost',sans-serif}
-    .ctab:hover{border-color:var(--g2);color:var(--g3)}
-    .ctab.on{background:var(--cta);border-color:transparent;color:var(--dark);font-weight:700;box-shadow:0 4px 18px rgba(212,160,23,.35)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,44px)}
+.hstat-val{
+  font-family:'Italiana',serif;font-size:clamp(1.6rem,4vw,2.2rem);
+  line-height:1;
+}
+.hstat-lbl{
+  font-family:'Cinzel',serif;font-size:.6rem;
+  color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;margin-top:4px;
+}
 
-    /* PRODUCT CARD */
-    .pcard{background:var(--warm);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .32s;position:relative;animation:cardrise .48s ease both}
-    .pcard:hover{transform:translateY(-8px) scale(1.018);box-shadow:0 22px 52px rgba(212,160,23,.22),0 4px 12px rgba(212,160,23,.1)}
-    @keyframes cardrise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    .pcard-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:linear-gradient(135deg,var(--pale) 0%,#FDE9A0 100%);position:relative;flex-shrink:0}
-    .pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .pcard:hover .pcard-img img{transform:scale(1.09)}
-    .pcard-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}
-    .pcard-ov{position:absolute;inset:0;z-index:3;border-radius:20px;background:linear-gradient(to top,rgba(17,8,0,.92) 0%,rgba(17,8,0,.28) 52%,transparent 100%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;gap:7px}
-    .pcard:hover .pcard-ov{opacity:1}
-    .ov-detail{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:50px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);color:#fff;font-size:.72rem;font-weight:600;cursor:pointer;transition:background .2s;font-family:'Jost',sans-serif}
-    .ov-detail:hover{background:rgba(255,255,255,.25)}
-    .ov-cmd{display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:50px;background:var(--cta);color:var(--dark);font-size:.72rem;font-weight:700;text-decoration:none;transition:transform .2s;font-family:'Jost',sans-serif;letter-spacing:.04em}
-    .ov-cmd:hover{transform:scale(1.04)}
-    .ribbon{position:absolute;top:12px;right:-5px;z-index:4;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:3px 3px 0 3px;font-family:'Jost',sans-serif}
-    .ribbon::after{content:'';position:absolute;bottom:-6px;right:0;border-style:solid;border-width:6px 6px 0 0}
-    .pcard-body{padding:12px 13px 14px;flex:1;display:flex;flex-direction:column}
-    .pcat{font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--o2);margin-bottom:4px;font-family:'Cinzel',serif}
-    .pname{font-family:'Cinzel',serif;font-size:.88rem;font-weight:700;color:var(--dark2);line-height:1.3;margin-bottom:12px;flex:1}
-    .cmd-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:var(--cta);color:var(--dark);font-size:.74rem;font-weight:700;font-family:'Cinzel',serif;border:none;border-radius:50px;padding:9px 14px;cursor:pointer;text-decoration:none;transition:all .22s;letter-spacing:.06em;box-shadow:0 3px 14px rgba(212,160,23,.3)}
-    .cmd-btn:hover{transform:scale(1.04);box-shadow:0 5px 20px rgba(212,160,23,.45)}
+.hero-wave{
+  position:absolute;bottom:0;left:0;right:0;
+  line-height:0;z-index:2;
+}
+.hero-wave svg{width:100%;height:clamp(48px,7vw,78px);display:block}
 
-    /* FLOATING */
-    .wa-float{position:fixed;bottom:26px;right:26px;z-index:999;width:58px;height:58px;border-radius:50%;background:var(--cta);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 24px rgba(212,160,23,.55);animation:fpulse 2.8s ease infinite;transition:transform .25s}
-    .wa-float:hover{transform:scale(1.14)}
-    @keyframes fpulse{0%,100%{box-shadow:0 6px 24px rgba(212,160,23,.55)}50%{box-shadow:0 6px 32px rgba(212,160,23,.8),0 0 0 10px rgba(212,160,23,.1)}}
+/* ── FEATURES ── */
+#features{
+  background:var(--cr);
+  padding:clamp(44px,6vw,64px) clamp(14px,4vw,32px);
+}
+.features-grid{
+  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+@media(max-width:580px){.features-grid{grid-template-columns:1fr}}
+.feat{
+  background:var(--warm);border:1px solid var(--bdr);
+  border-radius:18px;padding:clamp(18px,3vw,26px) 20px;
+  text-align:center;
+  transition:transform .28s,box-shadow .28s;
+}
+.feat:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(212,160,23,.14)}
+.feat-ico{
+  width:50px;height:50px;border-radius:14px;
+  background:linear-gradient(135deg,var(--pale),var(--soft));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.45rem;margin:0 auto 13px;
+}
+.feat-t{font-family:'Cinzel',serif;font-size:.88rem;font-weight:700;color:var(--dk2);margin-bottom:7px}
+.feat-d{font-size:.76rem;color:var(--muted);line-height:1.65}
 
-    /* ABOUT */
-    .about-bg{background:linear-gradient(150deg,#110800 0%,#1E0F00 45%,#3A1900 80%,#6B3E00 100%);position:relative;overflow:hidden}
-    .about-bg::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,23,.08) 0%,transparent 70%);pointer-events:none}
-    .stat-box{text-align:center;padding:20px 24px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(245,204,69,.14);transition:background .25s,border-color .25s}
-    .stat-box:hover{background:rgba(255,255,255,.09);border-color:rgba(245,204,69,.28)}
+/* ── VARIETY BANNER ── */
+.var-banner{
+  background:linear-gradient(150deg,#110800,#1E0F00,#3A1900);
+  padding:clamp(24px,4vw,36px) clamp(14px,4vw,32px);
+  border-top:1px solid rgba(212,160,23,.1);
+  border-bottom:1px solid rgba(212,160,23,.1);
+}
+.var-banner-inner{max-width:700px;margin:0 auto;text-align:center}
+.var-banner-txt{
+  font-family:'Italiana',serif;
+  font-size:clamp(1rem,2.6vw,1.55rem);
+  color:var(--g1);line-height:1.65;
+}
+.var-banner-sub{
+  font-size:clamp(.75rem,1.6vw,.86rem);
+  color:rgba(255,255,255,.44);margin-top:6px;
+}
 
-    /* CONTACT */
-    .contact-bg{background:linear-gradient(135deg,var(--pale) 0%,#FDE9A0 50%,var(--pale) 100%)}
-    .big-cta{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;border-radius:20px;background:linear-gradient(135deg,var(--g2),var(--o2));color:#fff;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 30px rgba(212,160,23,.4);transition:transform .22s,box-shadow .22s}
-    .big-cta:hover{transform:scale(1.04);box-shadow:0 12px 40px rgba(212,160,23,.55)}
+/* ── CATALOGUE ── */
+#catalogue{
+  background:var(--cr);
+  padding:clamp(40px,6vw,68px) clamp(14px,4vw,32px) clamp(52px,8vw,80px);
+}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:clamp(28px,4vw,44px)}
+.gold-line{
+  height:2px;width:56px;margin:0 auto;
+  background:linear-gradient(90deg,transparent,var(--g2),var(--o2),transparent);
+  border-radius:2px;
+}
+.sec-lbl{
+  font-family:'Cinzel',serif;font-size:.65rem;
+  letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--g2);
+  margin:12px 0 7px;
+}
+.sec-title{
+  font-family:'Italiana',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  color:var(--dk2);line-height:1.1;
+}
+.sec-sub{
+  font-size:clamp(.8rem,1.8vw,.88rem);color:var(--muted);
+  margin-top:8px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;
+}
 
-    /* FOOTER */
-    .footer-bg{background:linear-gradient(160deg,#0A0500 0%,#110800 100%)}
+/* FILTER TABS */
+.cat-filters{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:8px;margin-bottom:clamp(22px,3vw,36px);
+}
+.ctab{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:8px 16px;border-radius:50px;
+  border:1.5px solid rgba(212,160,23,.22);
+  background:var(--warm);color:var(--muted);
+  font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;white-space:nowrap;
+  font-family:'Jost',sans-serif;
+}
+.ctab:hover{border-color:var(--g2);color:var(--g3)}
+.ctab.on{
+  background:var(--cta);border-color:transparent;
+  color:var(--dk);font-weight:700;
+  box-shadow:0 4px 16px rgba(212,160,23,.32);
+}
 
-    /* MODAL */
-    .modal-bg{position:fixed;inset:0;z-index:500;background:rgba(17,8,0,.72);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
-    .modal-bg.open{opacity:1;pointer-events:all}
-    .mbox{background:var(--warm);border-radius:24px;max-width:440px;width:100%;max-height:90dvh;overflow-y:auto;padding:28px;position:relative;transform:scale(.93);transition:transform .3s;border-top:3px solid var(--g2)}
-    .modal-bg.open .mbox{transform:scale(1)}
+/* PRODUCTS GRID */
+#products-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:clamp(10px,1.8vw,16px);
+}
+@media(max-width:1100px){#products-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:820px){#products-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){#products-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media(max-width:340px){#products-grid{grid-template-columns:1fr}}
 
-    /* MISC */
-    .sec-lbl{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--g2)}
-    .sec-title{font-family:'Italiana',serif;font-size:clamp(2rem,3.8vw,3.2rem);color:var(--dark2);line-height:1.1}
-    .gold-line{height:2px;width:60px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--g2),var(--o2),transparent);border-radius:2px}
-    .variety-banner{background:linear-gradient(135deg,var(--dark3),var(--dark2));padding:28px 20px}
+/* PRODUCT CARD */
+.pcard{
+  background:var(--warm);border:1px solid var(--bdr);
+  border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;
+  position:relative;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
+  animation:cardrise .44s ease both;
+}
+.pcard:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 18px 44px rgba(212,160,23,.2),0 4px 10px rgba(212,160,23,.08)}
+@keyframes cardrise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-    /* ANIMS */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .fu{animation:fadeUp .55s ease both}
-    .d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
-    .ham span{display:block;width:22px;height:2px;background:var(--dark2);border-radius:2px;transition:all .25s}
+.pcard-img{
+  width:100%;aspect-ratio:1/1;
+  overflow:hidden;position:relative;flex-shrink:0;
+  background:linear-gradient(135deg,var(--pale),var(--soft));
+}
+.pcard-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .48s ease;
+}
+.pcard:hover .pcard-img img{transform:scale(1.08)}
 
-    @media(max-width:640px){.wa-float{width:52px;height:52px;bottom:18px;right:18px}.brand-main{font-size:1.9rem}}
-    @media(max-width:380px){.pname{font-size:.8rem}}
-  </style>
+.pcard-ov{
+  position:absolute;inset:0;z-index:3;
+  border-radius:16px 16px 0 0;
+  background:linear-gradient(to top,rgba(17,8,0,.9) 0%,rgba(17,8,0,.22) 55%,transparent 100%);
+  opacity:0;transition:opacity .28s;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:12px;gap:7px;
+}
+.pcard:hover .pcard-ov{opacity:1}
+.ov-detail{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:7px 12px;border-radius:50px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(6px);color:#fff;
+  font-size:.68rem;font-weight:600;cursor:pointer;
+  transition:background .18s;font-family:'Jost',sans-serif;border-radius:50px;
+}
+.ov-detail:hover{background:rgba(255,255,255,.24)}
+.ov-cmd{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:8px 12px;border-radius:50px;
+  background:var(--cta);color:var(--dk);
+  font-size:.68rem;font-weight:700;
+  text-decoration:none;transition:transform .18s;
+  font-family:'Jost',sans-serif;
+}
+.ov-cmd:hover{transform:scale(1.04)}
+
+.ribbon{
+  position:absolute;top:10px;right:-4px;z-index:4;
+  font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:3px 3px 0 3px;
+  font-family:'Jost',sans-serif;
+}
+.ribbon::after{
+  content:'';position:absolute;bottom:-5px;right:0;
+  border-style:solid;border-width:5px 5px 0 0;
+}
+
+.pcard-body{padding:10px 11px 12px;flex:1;display:flex;flex-direction:column;gap:8px}
+.pcat{
+  font-family:'Cinzel',serif;font-size:.56rem;
+  text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--o2);
+}
+.pname{
+  font-family:'Cinzel',serif;font-size:clamp(.72rem,.9vw+.3rem,.85rem);
+  font-weight:700;color:var(--dk2);line-height:1.28;flex:1;
+}
+.cmd-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:100%;background:var(--cta);color:var(--dk);
+  font-size:.68rem;font-weight:700;font-family:'Cinzel',serif;
+  border:none;border-radius:50px;padding:9px 10px;
+  cursor:pointer;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;letter-spacing:.05em;
+  box-shadow:0 3px 12px rgba(212,160,23,.28);
+  white-space:nowrap;
+}
+.cmd-btn:hover{transform:scale(1.04);box-shadow:0 5px 18px rgba(212,160,23,.42)}
+
+/* ── ABOUT ── */
+#apropos{
+  background:linear-gradient(150deg,#110800 0%,#1E0F00 45%,#3A1900 80%,#6B3E00 100%);
+  position:relative;overflow:hidden;
+  padding:clamp(52px,8vw,88px) clamp(14px,4vw,32px);
+}
+#apropos::before{
+  content:'';position:absolute;top:-30%;right:-8%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,160,23,.07),transparent 70%);
+  pointer-events:none;
+}
+.about-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.about-title{
+  font-family:'Italiana',serif;
+  font-size:clamp(1.9rem,4.5vw,3.2rem);
+  color:#fff;line-height:1.1;margin:12px 0 18px;
+}
+.about-title em{color:var(--g1);font-style:italic}
+.about-p{
+  color:rgba(255,255,255,.58);
+  font-size:clamp(.84rem,1.8vw,.96rem);
+  line-height:1.88;max-width:580px;margin:0 auto 14px;
+}
+.about-p strong{color:var(--g1)}
+.about-p2{
+  color:rgba(255,255,255,.38);
+  font-size:clamp(.8rem,1.6vw,.88rem);
+  line-height:1.75;max-width:500px;margin:0 auto 40px;
+}
+.about-p2 strong{color:rgba(255,255,255,.82)}
+.stats-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,2vw,16px);
+}
+.stat-box{
+  text-align:center;padding:18px clamp(18px,3vw,28px);
+  border-radius:14px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(245,204,69,.14);
+  transition:background .22s,border-color .22s;min-width:120px;
+}
+.stat-box:hover{background:rgba(255,255,255,.09);border-color:rgba(245,204,69,.26)}
+.stat-val{font-family:'Italiana',serif;font-size:1.85rem;color:var(--g1);line-height:1}
+.stat-lbl{
+  font-family:'Cinzel',serif;font-size:.58rem;
+  color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;margin-top:6px;
+}
+
+/* ── CONTACT ── */
+#contact{
+  background:linear-gradient(135deg,var(--pale),#FDE9A0,var(--pale));
+  padding:clamp(52px,8vw,80px) clamp(14px,4vw,32px);
+}
+.contact-inner{max-width:700px;margin:0 auto;text-align:center}
+.contact-title{
+  font-family:'Italiana',serif;
+  font-size:clamp(1.9rem,4vw,3rem);
+  color:var(--dk2);line-height:1.1;margin:8px 0 14px;
+}
+.contact-sub{
+  color:var(--muted);font-size:clamp(.82rem,1.8vw,.94rem);
+  line-height:1.8;max-width:440px;margin:0 auto 28px;
+}
+.big-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 32px;border-radius:18px;
+  background:linear-gradient(135deg,var(--g2),var(--o2));
+  color:#fff;font-family:'Cinzel',serif;
+  font-size:clamp(.78rem,1.8vw,.9rem);font-weight:700;letter-spacing:.08em;
+  text-decoration:none;box-shadow:0 8px 28px rgba(212,160,23,.38);
+  transition:transform .22s,box-shadow .22s;
+}
+.big-cta:hover{transform:scale(1.04);box-shadow:0 12px 38px rgba(212,160,23,.52)}
+.contact-pills{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px;
+}
+.cpill{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:50px;
+  background:var(--warm);color:var(--dk2);
+  font-size:clamp(.74rem,1.6vw,.84rem);font-weight:600;
+  box-shadow:0 2px 10px rgba(212,160,23,.14);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:linear-gradient(160deg,#0A0500,#110800);
+  padding:clamp(40px,6vw,60px) clamp(14px,4vw,32px) clamp(24px,3vw,36px);
+  text-align:center;
+}
+.footer-name{font-family:'Cinzel',serif;font-weight:900;font-size:1.45rem;letter-spacing:.1em}
+.footer-sub{font-family:'Italiana',serif;color:var(--g2);font-size:.9rem;letter-spacing:.14em;margin-top:3px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,3vw,28px);margin:24px 0 18px}
+.footer-links a{
+  color:rgba(255,255,255,.38);text-decoration:none;
+  font-size:.8rem;transition:color .18s;
+}
+.footer-links a:hover{color:var(--g1)}
+.footer-copy{
+  color:rgba(255,255,255,.16);
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;
+}
+
+/* ── FLOAT WA ── */
+.wa-float{
+  position:fixed;bottom:22px;right:22px;z-index:999;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--cta);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 6px 24px rgba(212,160,23,.52);
+  animation:fpulse 2.8s ease infinite;
+  transition:transform .25s;
+}
+.wa-float:hover{transform:scale(1.12)}
+@keyframes fpulse{
+  0%,100%{box-shadow:0 6px 24px rgba(212,160,23,.52)}
+  50%{box-shadow:0 6px 32px rgba(212,160,23,.76),0 0 0 10px rgba(212,160,23,.1)}
+}
+@media(max-width:480px){.wa-float{width:50px;height:50px;bottom:16px;right:16px}}
+
+/* ── MODAL ── */
+.modal-bg{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(17,8,0,.74);backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  padding:16px;
+  opacity:0;pointer-events:none;transition:opacity .28s;
+}
+.modal-bg.open{opacity:1;pointer-events:all}
+.mbox{
+  background:var(--warm);border-radius:20px;
+  max-width:420px;width:100%;max-height:90dvh;overflow-y:auto;
+  padding:clamp(18px,4vw,28px);position:relative;
+  transform:scale(.94);transition:transform .28s;
+  border-top:3px solid var(--g2);
+}
+.modal-bg.open .mbox{transform:scale(1)}
+.mclose{
+  position:absolute;top:12px;right:12px;
+  width:30px;height:30px;border-radius:50%;
+  border:none;background:var(--pale);cursor:pointer;
+  font-size:.82rem;color:var(--dk2);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s;
+}
+.mclose:hover{background:var(--soft)}
+.m-img{
+  width:100%;height:190px;border-radius:12px;overflow:hidden;
+  margin-bottom:14px;
+  background:linear-gradient(135deg,var(--pale),var(--soft));
+}
+.m-img img{width:100%;height:100%;object-fit:cover}
+.m-cat{
+  font-family:'Cinzel',serif;font-size:.58rem;
+  text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--o2);margin-bottom:5px;
+}
+.m-name{
+  font-family:'Cinzel',serif;font-weight:700;
+  font-size:clamp(1rem,2.5vw,1.22rem);
+  color:var(--dk2);margin-bottom:18px;line-height:1.25;
+}
+.m-wa{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:13px;border-radius:50px;
+  background:var(--cta);color:var(--dk);
+  font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;
+  text-decoration:none;letter-spacing:.06em;
+  box-shadow:0 4px 18px rgba(212,160,23,.38);
+  transition:transform .2s;
+}
+.m-wa:hover{transform:scale(1.04)}
+
+/* ── REVEAL ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .55s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
+
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
-<!-- FLOATING CTA -->
-<a href="#" id="float-wa" target="_blank" rel="noopener" class="wa-float" aria-label="Commander">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="#12090A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- FLOAT WA -->
+<a href="#" id="float-wa" target="_blank" rel="noopener" class="wa-float" aria-label="Commander sur WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#12090A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <header id="nav">
-  <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-3">
-    <a href="#" class="flex items-center gap-2.5 shrink-0">
-      <div class="w-9 h-9 rounded-full flex items-center justify-center text-base shrink-0" style="background:var(--cta);box-shadow:0 3px 12px rgba(212,160,23,.45);">⭐</div>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-ico">⭐</div>
       <div>
-        <div class="cinzel font-black" style="font-size:1.05rem;color:var(--dark2);letter-spacing:.07em;line-height:1;">GINETTE</div>
-        <div class="italiana" style="font-size:.75rem;color:var(--g2);letter-spacing:.12em;line-height:1.1;">Star Girl Beauty</div>
+        <div class="nav-logo-name">GINETTE</div>
+        <div class="nav-logo-sub">Star Girl Beauty</div>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-6">
+    <nav class="nav-links">
       <a href="#catalogue" class="nl" data-t="nav_cat">Catalogue</a>
       <a href="#apropos"   class="nl" data-t="nav_about">À propos</a>
       <a href="#contact"   class="nl" data-t="nav_contact">Contact</a>
-      <div class="flex items-center gap-1 ml-2" style="border-left:1px solid var(--bdr);padding-left:14px;">
-        <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FRA</button>
-        <button class="lang-btn"        id="btn-en" onclick="setLang('en')">ENG</button>
-      </div>
     </nav>
-    <a href="#" id="nav-cta-link" target="_blank" rel="noopener" class="nav-cta hidden sm:inline-flex" data-t="btn_order">⭐ Commander</a>
-    <button onclick="toggleNav()" class="ham flex flex-col gap-1.5 p-1.5 md:hidden" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div id="mnav" class="hidden md:hidden" style="background:rgba(255,251,240,.97);backdrop-filter:blur(14px);border-top:1px solid var(--bdr);">
-    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-1">
-      <a href="#catalogue" onclick="toggleNav()" class="py-3 font-medium text-sm border-b nl" style="border-color:var(--bdr);" data-t="nav_cat">Catalogue</a>
-      <a href="#apropos"   onclick="toggleNav()" class="py-3 font-medium text-sm border-b nl" style="border-color:var(--bdr);" data-t="nav_about">À propos</a>
-      <a href="#contact"   onclick="toggleNav()" class="py-3 font-medium text-sm nl" data-t="nav_contact">Contact</a>
-      <div class="flex items-center gap-2 mt-3 mb-1">
-        <span style="font-size:.72rem;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:.1em;" data-t="lang_label">Langue :</span>
-        <button class="lang-btn active" id="btn-fr-m" onclick="setLang('fr')">FRA</button>
-        <button class="lang-btn"        id="btn-en-m" onclick="setLang('en')">ENG</button>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="lang-btn active" id="btn-fr"  onclick="setLang('fr')">FRA</button>
+        <button class="lang-btn"        id="btn-en"  onclick="setLang('en')">ENG</button>
       </div>
-      <a href="#" id="mob-cta-link" target="_blank" rel="noopener" class="mt-2 flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm cinzel" style="background:var(--cta);color:var(--dark);" data-t="btn_order_mobile">⭐ Commander sur WhatsApp</a>
+      <a href="#" id="nav-cta-link" target="_blank" rel="noopener" class="nav-cta" data-t="btn_order">⭐ Commander</a>
+      <button class="ham" id="ham" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mnav">
+    <div class="mnav-inner">
+      <a href="#catalogue" onclick="closeNav()" data-t="nav_cat">Catalogue</a>
+      <a href="#apropos"   onclick="closeNav()" data-t="nav_about">À propos</a>
+      <a href="#contact"   onclick="closeNav()" data-t="nav_contact">Contact</a>
+      <div class="mnav-lang">
+        <span class="mnav-lang-lbl" data-t="lang_label">Langue :</span>
+        <div class="lang-sw">
+          <button class="lang-btn active" id="btn-fr-m" onclick="setLang('fr')">FRA</button>
+          <button class="lang-btn"        id="btn-en-m" onclick="setLang('en')">ENG</button>
+        </div>
+      </div>
+      <a href="#" id="mob-cta-link" target="_blank" rel="noopener" class="mnav-cta" data-t="btn_order_mobile">⭐ Commander sur WhatsApp</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero pt-20" id="home">
-  <div class="blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(249,200,32,.13) 0%,transparent 70%);top:6%;left:2%;"></div>
-  <div class="blob" style="width:260px;height:260px;background:radial-gradient(circle,rgba(232,123,12,.11) 0%,transparent 70%);bottom:22%;left:38%;"></div>
-  <div class="orbit" style="width:750px;height:750px;top:50%;left:73%;animation-duration:35s;"></div>
-  <div class="orbit" style="width:500px;height:500px;top:50%;left:73%;animation-duration:24s;animation-direction:reverse;border-color:rgba(232,123,12,.07);"></div>
+<section class="hero" id="home">
+  <div class="blob" style="width:360px;height:360px;background:radial-gradient(circle,rgba(249,200,32,.12),transparent 70%);top:5%;left:1%;"></div>
+  <div class="blob" style="width:240px;height:240px;background:radial-gradient(circle,rgba(232,123,12,.1),transparent 70%);bottom:24%;left:36%;"></div>
+  <div class="orbit" style="width:720px;height:720px;top:50%;left:72%;animation-duration:35s;"></div>
+  <div class="orbit" style="width:480px;height:480px;top:50%;left:72%;animation-duration:24s;animation-direction:reverse;border-color:rgba(232,123,12,.07);"></div>
   <div id="stc" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></div>
-  <div class="max-w-7xl mx-auto px-5 py-24 relative z-10 w-full">
-    <div class="max-w-xl">
-      <div class="hero-badge fu mb-6">🇨🇲 <span data-t="hero_badge">Disponible à Douala — Cameroun</span></div>
-      <div class="fu d1 mb-5">
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge fu">🇨🇲 <span data-t="hero_badge">Disponible à Douala — Cameroun</span></div>
+      <div class="fu d1">
         <div class="brand-main shimmer">GINETTE</div>
-        <div class="brand-tag">Star Girl Beauty Cosmetics</div>
-        <div class="brand-city">✦ Beauty · Douala ✦</div>
+        <span class="brand-tag">Star Girl Beauty Cosmetics</span>
+        <span class="brand-city">✦ Beauty · Douala ✦</span>
       </div>
-      <h1 class="hero-head fu d2 mb-6">
-        <span data-t="hero_title1">Brillez comme</span><br/>
-        <span data-t="hero_title2">une <span class="it">étoile</span></span>
-      </h1>
-      <p class="fu d3 mb-8" style="color:rgba(255,255,255,.68);font-size:1rem;line-height:1.85;max-width:460px;">
+      <p class="hero-sub fu d2">
         <span data-t="hero_sub">Une sélection de cosmétiques haut de gamme pour sublimer votre beauté. Huiles, laits, savons, sérums et bien plus encore.</span>
-        <br/><strong style="color:var(--g1);" data-t="hero_cta_text">Commandez directement via WhatsApp !</strong>
+        <br/><strong data-t="hero_cta_text">Commandez directement via WhatsApp !</strong>
       </p>
-      <div class="fu d4 flex flex-wrap gap-4 mb-12">
+      <div class="hero-btns fu d3">
         <a href="#catalogue" class="btn-gold" data-t="btn_catalogue">🛍️ Voir le catalogue</a>
         <a href="#" id="hero-cta" target="_blank" rel="noopener" class="btn-order" data-t="btn_order">⭐ Commander</a>
       </div>
-      <div class="fu d5 flex flex-wrap gap-8">
+      <div class="hero-stats fu d4">
         <div>
-          <div class="italiana shimmer" style="font-size:2.2rem;line-height:1;" data-t="stat1_val">Large choix</div>
-          <div class="cinzel" style="font-size:.65rem;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.14em;margin-top:3px;" data-t="stat1_lbl">De produits variés</div>
+          <div class="hstat-val shimmer" data-t="stat1_val">Large choix</div>
+          <div class="hstat-lbl" data-t="stat1_lbl">De produits variés</div>
         </div>
         <div>
-          <div class="italiana shimmer" style="font-size:2.2rem;line-height:1;" data-t="stat2_val">Premium</div>
-          <div class="cinzel" style="font-size:.65rem;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.14em;margin-top:3px;" data-t="stat2_lbl">Qualité sélectionnée</div>
+          <div class="hstat-val shimmer" data-t="stat2_val">Premium</div>
+          <div class="hstat-lbl" data-t="stat2_lbl">Qualité sélectionnée</div>
         </div>
         <div>
-          <div class="italiana shimmer" style="font-size:2.2rem;line-height:1;">⭐ 4.9</div>
-          <div class="cinzel" style="font-size:.65rem;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.14em;margin-top:3px;" data-t="stat3_lbl">Satisfaction</div>
+          <div class="hstat-val shimmer">⭐ 4.9</div>
+          <div class="hstat-lbl" data-t="stat3_lbl">Satisfaction</div>
         </div>
       </div>
     </div>
   </div>
-  <div style="position:absolute;bottom:0;left:0;right:0;line-height:0;z-index:2;">
-    <svg viewBox="0 0 1440 78" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:78px;display:block;">
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 78" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <path d="M0,38 C200,78 400,0 600,38 C800,78 1000,0 1200,38 C1330,62 1400,20 1440,38 L1440,78 L0,78 Z" fill="#FFFBF0"/>
     </svg>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section style="background:var(--cream);padding:64px 20px 50px;">
-  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
-    <div class="feat"><div class="feat-ico">💎</div><div class="cinzel font-bold mb-2" style="font-size:.95rem;color:var(--dark2);" data-t="feat1_title">Qualité Premium</div><p style="font-size:.78rem;color:var(--muted);line-height:1.65;" data-t="feat1_desc">Des produits cosmétiques soigneusement sélectionnés pour répondre à toutes vos attentes de beauté.</p></div>
-    <div class="feat"><div class="feat-ico">📍</div><div class="cinzel font-bold mb-2" style="font-size:.95rem;color:var(--dark2);" data-t="feat2_title">Basés à Douala</div><p style="font-size:.78rem;color:var(--muted);line-height:1.65;" data-t="feat2_desc">Nous sommes disponibles à Douala. Contactez-nous pour connaître notre point de retrait.</p></div>
-    <div class="feat"><div class="feat-ico">✨</div><div class="cinzel font-bold mb-2" style="font-size:.95rem;color:var(--dark2);" data-t="feat3_title">Large Gamme</div><p style="font-size:.78rem;color:var(--muted);line-height:1.65;" data-t="feat3_desc">Huiles, laits, savons, sérums, crèmes… Une sélection variée qui s'enrichit régulièrement.</p></div>
+<section id="features">
+  <div class="features-grid">
+    <div class="feat reveal">
+      <div class="feat-ico">💎</div>
+      <div class="feat-t" data-t="feat1_title">Qualité Premium</div>
+      <p class="feat-d" data-t="feat1_desc">Des produits cosmétiques soigneusement sélectionnés pour répondre à toutes vos attentes de beauté.</p>
+    </div>
+    <div class="feat reveal" style="transition-delay:.1s">
+      <div class="feat-ico">📍</div>
+      <div class="feat-t" data-t="feat2_title">Basés à Douala</div>
+      <p class="feat-d" data-t="feat2_desc">Disponibles à Douala. Contactez-nous pour connaître notre point de retrait.</p>
+    </div>
+    <div class="feat reveal" style="transition-delay:.2s">
+      <div class="feat-ico">✨</div>
+      <div class="feat-t" data-t="feat3_title">Large Gamme</div>
+      <p class="feat-d" data-t="feat3_desc">Huiles, laits, savons, sérums, crèmes… Une sélection variée qui s'enrichit régulièrement.</p>
+    </div>
   </div>
 </section>
 
 <!-- VARIETY BANNER -->
-<section class="variety-banner">
-  <div class="max-w-5xl mx-auto text-center">
-    <p class="italiana" style="font-size:clamp(1.1rem,2.8vw,1.7rem);color:var(--g1);line-height:1.6;">
-      ✦ <span data-t="banner_main">Nous proposons une <strong style="color:var(--y1)">grande variété de produits</strong> — notre gamme s'enrichit régulièrement.</span><br/>
-      <span style="font-size:.85em;color:rgba(255,255,255,.5);" data-t="banner_sub">Contactez-nous pour découvrir toutes nos nouveautés !</span>
+<div class="var-banner">
+  <div class="var-banner-inner">
+    <p class="var-banner-txt">
+      ✦ <span data-t="banner_main">Nous proposons une <strong style="color:var(--y1)">grande variété de produits</strong> — notre gamme s'enrichit régulièrement.</span>
     </p>
+    <p class="var-banner-sub" data-t="banner_sub">Contactez-nous pour découvrir toutes nos nouveautés !</p>
   </div>
-</section>
-
-<!-- CATEGORIES -->
-<section style="padding:52px 20px 26px;background:var(--cream);">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-8">
-      <div class="gold-line mb-4"></div>
-      <div class="sec-lbl mb-2" data-t="sec_lbl_cat">✦ Nos gammes</div>
-      <h2 class="sec-title" data-t="sec_title_cat">Explorez nos catégories</h2>
-      <div class="gold-line mt-4"></div>
-    </div>
-    <div class="flex flex-wrap justify-center gap-3" id="cat-filters">
-      <button class="ctab on" onclick="filterCat('all',this)"   data-t="cat_all">⭐ Tout voir</button>
-      <button class="ctab" onclick="filterCat('huile',this)"    data-t="cat_huile">🫙 Huiles</button>
-      <button class="ctab" onclick="filterCat('lait',this)"     data-t="cat_lait">🥛 Laits corps</button>
-      <button class="ctab" onclick="filterCat('savon',this)"    data-t="cat_savon">🧼 Savons</button>
-      <button class="ctab" onclick="filterCat('serum',this)"    data-t="cat_serum">💧 Sérums</button>
-      <button class="ctab" onclick="filterCat('creme',this)"    data-t="cat_creme">🌸 Crèmes</button>
-      <button class="ctab" onclick="filterCat('autre',this)"    data-t="cat_autre">✨ Autres</button>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- CATALOGUE -->
-<section style="padding:10px 20px 80px;background:var(--cream);" id="catalogue">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-10">
-      <div class="sec-lbl mb-2" data-t="sec_lbl_prod">✦ Notre sélection</div>
+<section id="catalogue">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <div class="gold-line"></div>
+      <div class="sec-lbl" data-t="sec_lbl_prod">✦ Notre sélection</div>
       <h2 class="sec-title" data-t="sec_title_prod">Catalogue Beauté</h2>
-      <p style="font-size:.88rem;color:var(--muted);margin-top:8px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;" data-t="catalogue_sub">Cliquez sur <strong>« Commander »</strong> pour nous écrire sur WhatsApp et finaliser votre commande simplement.</p>
+      <p class="sec-sub" data-t="catalogue_sub">Cliquez sur <strong>« Commander »</strong> pour nous écrire sur WhatsApp et finaliser votre commande.</p>
+      <div class="gold-line" style="margin-top:14px"></div>
     </div>
-    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5"></div>
+
+    <div class="cat-filters reveal" id="cat-filters">
+      <button class="ctab on" onclick="filterCat('all',this)"  data-t="cat_all">⭐ Tout voir</button>
+      <button class="ctab" onclick="filterCat('huile',this)"   data-t="cat_huile">🫙 Huiles</button>
+      <button class="ctab" onclick="filterCat('lait',this)"    data-t="cat_lait">🥛 Laits corps</button>
+      <button class="ctab" onclick="filterCat('autre',this)"   data-t="cat_autre">✨ Autres</button>
+    </div>
+
+    <div id="products-grid"></div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="about-bg py-24 px-5" id="apropos">
-  <div class="max-w-5xl mx-auto relative z-10 text-center">
-    <div class="sec-lbl mb-3" style="color:var(--g1);" data-t="about_lbl">✦ Notre histoire</div>
-    <h2 class="italiana mb-5" style="font-size:clamp(2rem,4.5vw,3.4rem);color:#fff;line-height:1.1;">
-      <em style="color:var(--g1);">GINETTE Star Girl</em><br/>
+<section id="apropos">
+  <div class="about-inner reveal">
+    <div class="sec-lbl" style="color:var(--g1)" data-t="about_lbl">✦ Notre histoire</div>
+    <h2 class="about-title">
+      <em>GINETTE Star Girl</em><br/>
       <span data-t="about_sub">votre boutique beauté à Douala</span>
     </h2>
-    <p style="color:rgba(255,255,255,.62);font-size:.97rem;line-height:1.88;max-width:600px;margin:0 auto 14px;" data-t="about_p1">Chez <strong style="color:var(--g1)">GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.</p>
-    <p style="color:rgba(255,255,255,.45);font-size:.88rem;line-height:1.75;max-width:520px;margin:0 auto 40px;" data-t="about_p2">Basés à <strong style="color:#fff">Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.</p>
-    <div class="flex flex-wrap justify-center gap-5">
-      <div class="stat-box"><div class="italiana" style="font-size:1.95rem;color:var(--g1);line-height:1;" data-t="stat_a1">Varié</div><div class="cinzel" style="font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.15em;margin-top:6px;" data-t="stat_a1_lbl">Grande gamme</div></div>
-      <div class="stat-box"><div class="italiana" style="font-size:1.95rem;color:var(--g1);line-height:1;">500+</div><div class="cinzel" style="font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.15em;margin-top:6px;" data-t="stat_a2_lbl">Clientes satisfaites</div></div>
-      <div class="stat-box"><div class="italiana" style="font-size:1.95rem;color:var(--g1);line-height:1;">Douala</div><div class="cinzel" style="font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.15em;margin-top:6px;" data-t="stat_a3_lbl">Notre ville</div></div>
-      <div class="stat-box"><div class="italiana" style="font-size:1.95rem;color:var(--g1);line-height:1;">7j/7</div><div class="cinzel" style="font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.15em;margin-top:6px;" data-t="stat_a4_lbl">Disponibilité</div></div>
+    <p class="about-p" data-t="about_p1">Chez <strong>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.</p>
+    <p class="about-p2" data-t="about_p2">Basés à <strong>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.</p>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-val" data-t="stat_a1">Varié</div><div class="stat-lbl" data-t="stat_a1_lbl">Grande gamme</div></div>
+      <div class="stat-box"><div class="stat-val">500+</div><div class="stat-lbl" data-t="stat_a2_lbl">Clientes satisfaites</div></div>
+      <div class="stat-box"><div class="stat-val">Douala</div><div class="stat-lbl" data-t="stat_a3_lbl">Notre ville</div></div>
+      <div class="stat-box"><div class="stat-val">7j/7</div><div class="stat-lbl" data-t="stat_a4_lbl">Disponibilité</div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact-bg py-20 px-5" id="contact">
-  <div class="max-w-3xl mx-auto text-center">
-    <div class="sec-lbl mb-2" data-t="contact_lbl">✦ Nous joindre</div>
-    <h2 class="sec-title mb-4" data-t="contact_title">Passez votre commande</h2>
-    <p style="color:var(--muted);font-size:.95rem;line-height:1.8;max-width:460px;margin:0 auto 30px;" data-t="contact_sub">Un produit vous intéresse ? Écrivez-nous sur WhatsApp, nous vous guidons et confirmons votre commande rapidement.</p>
-    <a href="#" id="contact-cta" target="_blank" rel="noopener" class="big-cta mb-6 inline-flex">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<section id="contact">
+  <div class="contact-inner reveal">
+    <div class="sec-lbl" data-t="contact_lbl">✦ Nous joindre</div>
+    <h2 class="contact-title" data-t="contact_title">Passez votre commande</h2>
+    <p class="contact-sub" data-t="contact_sub">Un produit vous intéresse ? Écrivez-nous sur WhatsApp, nous vous guidons et confirmons votre commande rapidement.</p>
+    <a href="#" id="contact-cta" target="_blank" rel="noopener" class="big-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span data-t="contact_btn">WhatsApp · +237 694 375 683</span>
     </a>
-    <div class="flex flex-wrap justify-center gap-3">
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style="background:var(--warm);color:var(--dark2);box-shadow:0 2px 10px rgba(212,160,23,.15);" data-t="pill1">📍 Douala, Cameroun</span>
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style="background:var(--warm);color:var(--dark2);box-shadow:0 2px 10px rgba(212,160,23,.15);" data-t="pill2">🕐 7j/7 · 8h – 20h</span>
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style="background:var(--warm);color:var(--dark2);box-shadow:0 2px 10px rgba(212,160,23,.15);" data-t="pill3">✅ Retrait sur place</span>
+    <div class="contact-pills">
+      <span class="cpill" data-t="pill1">📍 Douala, Cameroun</span>
+      <span class="cpill" data-t="pill2">🕐 7j/7 · 8h – 20h</span>
+      <span class="cpill" data-t="pill3">✅ Retrait sur place</span>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer-bg py-12 px-5">
-  <div class="max-w-7xl mx-auto text-center">
-    <div class="cinzel font-black shimmer" style="font-size:1.5rem;letter-spacing:.1em;">GINETTE</div>
-    <div class="italiana" style="color:var(--g2);font-size:.95rem;letter-spacing:.15em;margin-top:2px;">Star Girl Beauty Cosmetics</div>
-    <div class="gold-line mt-5 mb-6"></div>
-    <div class="flex flex-wrap justify-center gap-6 mb-6">
-      <a href="#catalogue" data-t="nav_cat" style="color:rgba(255,255,255,.4);text-decoration:none;font-size:.82rem;transition:color .2s;" onmouseover="this.style.color='var(--g1)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Catalogue</a>
-      <a href="#apropos"   data-t="nav_about" style="color:rgba(255,255,255,.4);text-decoration:none;font-size:.82rem;transition:color .2s;" onmouseover="this.style.color='var(--g1)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">À propos</a>
-      <a href="#contact"   data-t="nav_contact" style="color:rgba(255,255,255,.4);text-decoration:none;font-size:.82rem;transition:color .2s;" onmouseover="this.style.color='var(--g1)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Contact</a>
-    </div>
-    <p style="color:rgba(255,255,255,.18);font-size:.7rem;font-family:'Cinzel',serif;letter-spacing:.08em;">© 2026 GINETTE Star Girl Beauty Cosmetics · Douala, Cameroun</p>
-  </div>
+<footer>
+  <div class="footer-name shimmer">GINETTE</div>
+  <div class="footer-sub">Star Girl Beauty Cosmetics</div>
+  <div class="gold-line" style="margin:18px auto"></div>
+  <nav class="footer-links">
+    <a href="#catalogue" data-t="nav_cat">Catalogue</a>
+    <a href="#apropos"   data-t="nav_about">À propos</a>
+    <a href="#contact"   data-t="nav_contact">Contact</a>
+  </nav>
+  <p class="footer-copy">© 2026 GINETTE Star Girl Beauty Cosmetics · Douala, Cameroun</p>
 </footer>
 
 <!-- MODAL -->
 <div class="modal-bg" id="modal-bg" onclick="closeModalOutside(event)">
   <div class="mbox">
-    <button onclick="closeModal()" style="position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;border:none;background:var(--pale);cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;color:var(--dark2);transition:background .2s;" onmouseover="this.style.background='var(--soft)'" onmouseout="this.style.background='var(--pale)'">✕</button>
-    <div id="m-img" style="width:100%;height:200px;border-radius:14px;overflow:hidden;margin-bottom:16px;background:linear-gradient(135deg,var(--pale),var(--soft));"></div>
-    <div id="m-cat" class="pcat" style="margin-bottom:5px;"></div>
-    <h3 id="m-name" class="cinzel font-bold" style="font-size:1.25rem;color:var(--dark2);margin-bottom:20px;line-height:1.25;"></h3>
-    <a id="m-wa" href="#" target="_blank" rel="noopener" class="cmd-btn" style="font-size:.88rem;padding:13px;">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <button class="mclose" onclick="closeModal()">✕</button>
+    <div class="m-img" id="m-img"></div>
+    <div class="m-cat" id="m-cat"></div>
+    <h3 class="m-name" id="m-name"></h3>
+    <a id="m-wa" href="#" target="_blank" rel="noopener" class="m-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span id="m-wa-txt">⭐ Je veux commander ce produit !</span>
     </a>
   </div>
 </div>
 
 <script>
-const WA = "237694375683";
+const WA="237694375683";
+const WA_ICO=`<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
-/* ══ TRANSLATIONS ══════════════════════════════════════════ */
-const T = {
+/* ── PRODUCTS: only those with real images ── */
+const PRODUCTS = {
+  fr:[
+    {id:1, cat:"huile", lbl:"Huile",      name:"Huile Whitening 7 Days",          image:"Photo1.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:2, cat:"lait",  lbl:"Lait corps", name:"Lait Pro Lab",                     image:"Photo2.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:3, cat:"lait",  lbl:"Lait corps", name:"Lait Corp Éclat Unifiant",         image:"Photo3.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:4, cat:"lait",  lbl:"Lait corps", name:"Lait Beauté Carotte Hydratant",    image:"Photo4.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:5, cat:"huile", lbl:"Huile",      name:"Glow Booster Lightening Oil",      image:"photo5.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:6, cat:"lait",  lbl:"Lait corps", name:"Aqua Rich Body Lotion",            image:"photo6.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:7, cat:"lait",  lbl:"Lait corps", name:"Olay Body Lotion",                 image:"photo7.jpeg",  badge:"Populaire", bc:"#D4A017", bcd:"#8a6500"},
+    {id:8, cat:"huile", lbl:"Huile",      name:"Cocoa Butter Formula Body Oil",    image:"photo8.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:9, cat:"autre", lbl:"Gel douche", name:"Shower Bath Gel",                  image:"photo9.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:10,cat:"huile", lbl:"Huile",      name:"Glow Bliss",                       image:"photo10.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:11,cat:"lait",  lbl:"Lait corps", name:"Dove Body Love",                   image:"photo11.jpeg", badge:"SPF 50",    bc:"#E05C14", bcd:"#9e3e0d"},
+    {id:12,cat:"lait",  lbl:"Lait corps", name:"Easy White Lait Clarifiant",       image:"photo12.jpeg", badge:"Nuit",      bc:"#3A1900", bcd:"#1e0e00"},
+    {id:13,cat:"lait",  lbl:"Lait corps", name:"Dr Teal's Body Lotion",            image:"photo13.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:14,cat:"autre", lbl:"Vaseline",   name:"Vaseline",                         image:"photo14.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:15,cat:"lait",  lbl:"Lait corps", name:"Skin by Zaron Body Lotion",        image:"photo15.jpeg", badge:"",          bc:"",        bcd:""},
+  ],
+  en:[
+    {id:1, cat:"huile", lbl:"Oil",        name:"Whitening Oil 7 Days",             image:"Photo1.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:2, cat:"lait",  lbl:"Body Lotion",name:"Pro Lab Lotion",                   image:"Photo2.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:3, cat:"lait",  lbl:"Body Lotion",name:"Brightening Body Lotion",          image:"Photo3.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:4, cat:"lait",  lbl:"Body Lotion",name:"Carrot Moisturizing Lotion",       image:"Photo4.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:5, cat:"huile", lbl:"Oil",        name:"Glow Booster Lightening Oil",      image:"photo5.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:6, cat:"lait",  lbl:"Body Lotion",name:"Aqua Rich Body Lotion",            image:"photo6.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:7, cat:"lait",  lbl:"Body Lotion",name:"Olay Body Lotion",                 image:"photo7.jpeg",  badge:"Popular",   bc:"#D4A017", bcd:"#8a6500"},
+    {id:8, cat:"huile", lbl:"Oil",        name:"Cocoa Butter Formula Body Oil",    image:"photo8.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:9, cat:"autre", lbl:"Shower Gel", name:"Shower Bath Gel",                  image:"photo9.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:10,cat:"huile", lbl:"Oil",        name:"Glow Bliss",                       image:"photo10.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:11,cat:"lait",  lbl:"Body Lotion",name:"Dove Body Love",                   image:"photo11.jpeg", badge:"SPF 50",    bc:"#E05C14", bcd:"#9e3e0d"},
+    {id:12,cat:"lait",  lbl:"Body Lotion",name:"Easy White Brightening Lotion",    image:"photo12.jpeg", badge:"Night",     bc:"#3A1900", bcd:"#1e0e00"},
+    {id:13,cat:"lait",  lbl:"Body Lotion",name:"Dr Teal's Body Lotion",            image:"photo13.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:14,cat:"autre", lbl:"Vaseline",   name:"Vaseline",                         image:"photo14.jpeg", badge:"",          bc:"",        bcd:""},
+    {id:15,cat:"lait",  lbl:"Body Lotion",name:"Skin by Zaron Body Lotion",        image:"photo15.jpeg", badge:"",          bc:"",        bcd:""},
+  ]
+};
+
+/* ── TRANSLATIONS ── */
+const T={
   fr:{
     nav_cat:"Catalogue",nav_about:"À propos",nav_contact:"Contact",lang_label:"Langue :",
     btn_order:"⭐ Commander",btn_order_mobile:"⭐ Commander sur WhatsApp",btn_catalogue:"🛍️ Voir le catalogue",
     hero_badge:"Disponible à Douala — Cameroun",
-    hero_title1:"Brillez comme",hero_title2:"une <span class='it'>étoile</span>",
     hero_sub:"Une sélection de cosmétiques haut de gamme pour sublimer votre beauté. Huiles, laits, savons, sérums et bien plus encore.",
     hero_cta_text:"Commandez directement via WhatsApp !",
-    stat1_val:"Large choix",stat1_lbl:"De produits variés",stat2_val:"Premium",stat2_lbl:"Qualité sélectionnée",stat3_lbl:"Satisfaction",
+    stat1_val:"Large choix",stat1_lbl:"De produits variés",
+    stat2_val:"Premium",stat2_lbl:"Qualité sélectionnée",stat3_lbl:"Satisfaction",
     feat1_title:"Qualité Premium",feat1_desc:"Des produits cosmétiques soigneusement sélectionnés pour répondre à toutes vos attentes de beauté.",
-    feat2_title:"Basés à Douala",feat2_desc:"Nous sommes disponibles à Douala. Contactez-nous pour connaître notre point de retrait.",
+    feat2_title:"Basés à Douala",feat2_desc:"Disponibles à Douala. Contactez-nous pour connaître notre point de retrait.",
     feat3_title:"Large Gamme",feat3_desc:"Huiles, laits, savons, sérums, crèmes… Une sélection variée qui s'enrichit régulièrement.",
     banner_main:"Nous proposons une <strong style='color:var(--y1)'>grande variété de produits</strong> — notre gamme s'enrichit régulièrement.",
     banner_sub:"Contactez-nous pour découvrir toutes nos nouveautés !",
-    sec_lbl_cat:"✦ Nos gammes",sec_title_cat:"Explorez nos catégories",
     sec_lbl_prod:"✦ Notre sélection",sec_title_prod:"Catalogue Beauté",
-    catalogue_sub:"Cliquez sur <strong>« Commander »</strong> pour nous écrire sur WhatsApp et finaliser votre commande simplement.",
-    cat_all:"⭐ Tout voir",cat_huile:"🫙 Huiles",cat_lait:"🥛 Laits corps",cat_savon:"🧼 Savons",cat_serum:"💧 Sérums",cat_creme:"🌸 Crèmes",cat_autre:"✨ Autres",
+    catalogue_sub:"Cliquez sur <strong>« Commander »</strong> pour nous écrire sur WhatsApp et finaliser votre commande.",
+    cat_all:"⭐ Tout voir",cat_huile:"🫙 Huiles",cat_lait:"🥛 Laits corps",cat_autre:"✨ Autres",
     about_lbl:"✦ Notre histoire",about_sub:"votre boutique beauté à Douala",
-    about_p1:"Chez <strong style='color:var(--g1)'>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.",
-    about_p2:"Basés à <strong style='color:#fff'>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.",
+    about_p1:"Chez <strong>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.",
+    about_p2:"Basés à <strong>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.",
     stat_a1:"Varié",stat_a1_lbl:"Grande gamme",stat_a2_lbl:"Clientes satisfaites",stat_a3_lbl:"Notre ville",stat_a4_lbl:"Disponibilité",
     contact_lbl:"✦ Nous joindre",contact_title:"Passez votre commande",
     contact_sub:"Un produit vous intéresse ? Écrivez-nous sur WhatsApp, nous vous guidons et confirmons votre commande rapidement.",
     contact_btn:"WhatsApp · +237 694 375 683",
     pill1:"📍 Douala, Cameroun",pill2:"🕐 7j/7 · 8h – 20h",pill3:"✅ Retrait sur place",
-    wa_gen:"Bonjour GINETTE Star Girl Beauty Cosmetics ⭐\nJe suis intéressé(e) par vos produits et j'aimerais commander !\n\n",
-    wa_pre:"Bonjour GINETTE Star Girl Beauty Cosmetics ⭐\nJe suis intéressé(e) par ce produit :\n\n👉 *",
-    wa_suf:"*\n\nJ'aimerais passer une commande. Merci !",
+    wa_gen:`Bonjour GINETTE Star Girl Beauty Cosmetics ⭐\nJe suis intéressé(e) par vos produits !\n\n`,
+    wa_pre:`Bonjour GINETTE Star Girl Beauty Cosmetics ⭐\nJe suis intéressé(e) par :\n\n👉 *`,
+    wa_suf:`*\n\nJ'aimerais passer commande. Merci !`,
     modal_btn:"⭐ Je veux commander ce produit !",
-    btn_detail:"👁 Voir détail",btn_cmd:"⭐ Commander",
-    products:[
-      {id:1,cat:"huile",lbl:"Huile",emoji:"",name:"Huile Whitening 7 Days",image:"Photo1.jpeg",badge:"",bc:"#C8820A",bcd:"#7a5a04"},
-      {id:2,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait Pro Lab",image:"Photo2.jpeg",badge:"",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:3,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait de Beauté Carotte Hydratante",image:"",badge:"",bc:"",bcd:""},
-      {id:4,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait White Eclat Unifiant ",image:"WhatsApp Image 2026-03-20 at 13.52.13 (1).jpeg",badge:"",bc:"",bcd:""},
-      {id:5,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait Niacinamide Anti-Âge",image:"",badge:"Anti-âge",bc:"#A87800",bcd:"#6b4d00"},
-      {id:6,cat:"huile",lbl:"Huile",emoji:"🫙",name:"Huile d'Argan Précieuse",image:"",badge:"",bc:"",bcd:""},
-      {id:7,cat:"savon",lbl:"Savon",emoji:"🧼",name:"Savon Éclat Papaye & Carotte",image:"",badge:"Populaire",bc:"#D4A017",bcd:"#8a6500"},
-      {id:8,cat:"savon",lbl:"Savon",emoji:"🧼",name:"Savon Black Soap Karité",image:"",badge:"",bc:"",bcd:""},
-      {id:9,cat:"serum",lbl:"Sérum",emoji:"💧",name:"Sérum Éclat Concentré",image:"",badge:"Premium",bc:"#D4A017",bcd:"#8a6500"},
-      {id:10,cat:"serum",lbl:"Sérum",emoji:"💧",name:"Sérum Anti-Taches Ciblé",image:"",badge:"",bc:"",bcd:""},
-      {id:11,cat:"creme",lbl:"Crème",emoji:"🌸",name:"Crème de Jour SPF 50",image:"",badge:"SPF 50",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:12,cat:"creme",lbl:"Crème",emoji:"🌸",name:"Crème Nuit Régénérante",image:"",badge:"Nuit",bc:"#3A1900",bcd:"#1e0e00"},
-      {id:13,cat:"huile",lbl:"Huile",emoji:"🫙",name:"Huile de Coco Multi-Usage",image:"",badge:"",bc:"",bcd:""},
-      {id:14,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait Karité & Miel Douceur",image:"",badge:"",bc:"",bcd:""},
-      {id:15,cat:"savon",lbl:"Savon",emoji:"🧼",name:"Savon Curcuma & Aloe Vera",image:"",badge:"Anti-acné",bc:"#D4A017",bcd:"#8a6500"},
-      {id:16,cat:"huile",lbl:"Huile",emoji:"🫙",name:"Huile Active Glow & Collagène",image:"",badge:"Glow ✨",bc:"#F9C820",bcd:"#c09510"},
-      {id:17,cat:"creme",lbl:"Crème",emoji:"🌸",name:"Crème Mains & Ongles",image:"",badge:"",bc:"",bcd:""},
-      {id:18,cat:"serum",lbl:"Sérum",emoji:"💧",name:"Sérum Lèvres Repulpant",image:"",badge:"",bc:"",bcd:""},
-      {id:19,cat:"lait",lbl:"Lait corps",emoji:"🥛",name:"Lait Aloe Vera Peaux Sensibles",image:"",badge:"Sensible",bc:"#A87800",bcd:"#6b4d00"},
-      {id:20,cat:"savon",lbl:"Savon",emoji:"🧼",name:"Savon Glycériné Éclat",image:"",badge:"",bc:"",bcd:""},
-      {id:21,cat:"huile",lbl:"Huile",emoji:"🫙",name:"Huile de Ricin Cheveux & Sourcils",image:"",badge:"Cheveux",bc:"#3A1900",bcd:"#1e0e00"},
-      {id:22,cat:"creme",lbl:"Crème",emoji:"🌸",name:"Crème Contour des Yeux",image:"",badge:"",bc:"",bcd:""},
-      {id:23,cat:"autre",lbl:"Masque",emoji:"🌟",name:"Masque Argile Purifiant",image:"",badge:"Coup d'éclat",bc:"#A87800",bcd:"#6b4d00"},
-      {id:24,cat:"autre",lbl:"Brume",emoji:"🌟",name:"Brume Fixatrice Eau de Rose",image:"",badge:"",bc:"",bcd:""},
-      {id:25,cat:"autre",lbl:"Gel douche",emoji:"🌟",name:"Gel Douche Exfoliant Coco",image:"",badge:"Corps",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:26,cat:"autre",lbl:"Kit beauté",emoji:"🎁",name:"Kit Beauté Complet — Cadeau",image:"",badge:"Cadeau 🎁",bc:"#D4A017",bcd:"#8a6500"}
-    ]
+    btn_detail:"👁 Voir",btn_cmd:"⭐ Commander",
   },
   en:{
     nav_cat:"Catalogue",nav_about:"About",nav_contact:"Contact",lang_label:"Language:",
     btn_order:"⭐ Order Now",btn_order_mobile:"⭐ Order on WhatsApp",btn_catalogue:"🛍️ View Catalogue",
     hero_badge:"Available in Douala — Cameroon",
-    hero_title1:"Shine like",hero_title2:"a <span class='it'>star</span>",
     hero_sub:"A curated selection of premium cosmetics to enhance your beauty. Oils, lotions, soaps, serums and much more.",
     hero_cta_text:"Order directly via WhatsApp!",
-    stat1_val:"Wide range",stat1_lbl:"Of varied products",stat2_val:"Premium",stat2_lbl:"Selected quality",stat3_lbl:"Satisfaction",
+    stat1_val:"Wide range",stat1_lbl:"Varied products",
+    stat2_val:"Premium",stat2_lbl:"Selected quality",stat3_lbl:"Satisfaction",
     feat1_title:"Premium Quality",feat1_desc:"Carefully selected cosmetic products to meet all your beauty needs.",
-    feat2_title:"Based in Douala",feat2_desc:"We are available in Douala. Contact us to find out our pick-up point.",
+    feat2_title:"Based in Douala",feat2_desc:"Available in Douala. Contact us to find our pick-up point.",
     feat3_title:"Wide Range",feat3_desc:"Oils, lotions, soaps, serums, creams… A varied selection that keeps growing.",
     banner_main:"We offer a <strong style='color:var(--y1)'>wide variety of products</strong> — our range keeps growing.",
     banner_sub:"Contact us to discover all our latest additions!",
-    sec_lbl_cat:"✦ Our ranges",sec_title_cat:"Explore our categories",
     sec_lbl_prod:"✦ Our selection",sec_title_prod:"Beauty Catalogue",
-    catalogue_sub:"Click <strong>\"Order\"</strong> to message us on WhatsApp and finalize your purchase simply.",
-    cat_all:"⭐ All",cat_huile:"🫙 Oils",cat_lait:"🥛 Body Lotions",cat_savon:"🧼 Soaps",cat_serum:"💧 Serums",cat_creme:"🌸 Creams",cat_autre:"✨ Others",
+    catalogue_sub:"Click <strong>\"Order\"</strong> to message us on WhatsApp and finalize your purchase.",
+    cat_all:"⭐ All",cat_huile:"🫙 Oils",cat_lait:"🥛 Body Lotions",cat_autre:"✨ Others",
     about_lbl:"✦ Our story",about_sub:"your beauty boutique in Douala",
-    about_p1:"At <strong style='color:var(--g1)'>GINETTE Star Girl Beauty Cosmetics</strong>, we offer an exclusive selection of premium cosmetics. Our mission: to give you the best to enhance your everyday beauty.",
-    about_p2:"Based in <strong style='color:#fff'>Douala</strong>, we respond directly via WhatsApp to guide you to the products that suit you.",
+    about_p1:"At <strong>GINETTE Star Girl Beauty Cosmetics</strong>, we offer an exclusive selection of premium cosmetics. Our mission: to give you the best to enhance your everyday beauty.",
+    about_p2:"Based in <strong>Douala</strong>, we respond directly via WhatsApp to guide you to the products that suit you.",
     stat_a1:"Varied",stat_a1_lbl:"Wide range",stat_a2_lbl:"Satisfied clients",stat_a3_lbl:"Our city",stat_a4_lbl:"Availability",
     contact_lbl:"✦ Reach us",contact_title:"Place your order",
     contact_sub:"Interested in a product? Message us on WhatsApp and we'll confirm your order quickly.",
     contact_btn:"WhatsApp · +237 694 375 683",
     pill1:"📍 Douala, Cameroon",pill2:"🕐 7d/7 · 8am – 8pm",pill3:"✅ Pick-up in store",
-    wa_gen:"Hello GINETTE Star Girl Beauty Cosmetics ⭐\nI am interested in your products and would like to order!\n\n",
-    wa_pre:"Hello GINETTE Star Girl Beauty Cosmetics ⭐\nI am interested in this product:\n\n👉 *",
-    wa_suf:"*\n\nI would like to place an order. Thank you!",
+    wa_gen:`Hello GINETTE Star Girl Beauty Cosmetics ⭐\nI'm interested in your products!\n\n`,
+    wa_pre:`Hello GINETTE Star Girl Beauty Cosmetics ⭐\nI'm interested in:\n\n👉 *`,
+    wa_suf:`*\n\nI'd like to place an order. Thank you!`,
     modal_btn:"⭐ I want to order this product!",
-    btn_detail:"👁 View detail",btn_cmd:"⭐ Order",
-    products:[
-      {id:1,cat:"huile",lbl:"Oil",emoji:"🫙",name:"Whitening Oil 7 Days",image:"",badge:"Best-seller",bc:"#C8820A",bcd:"#7a5a04"},
-      {id:2,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Vitamin C Glow Lotion",image:"",badge:"New",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:3,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Retinol 24 Smoothing Lotion",image:"",badge:"",bc:"",bcd:""},
-      {id:4,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Collagen Peptide Firming Lotion",image:"",badge:"",bc:"",bcd:""},
-      {id:5,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Niacinamide Anti-Age Lotion",image:"",badge:"Anti-age",bc:"#A87800",bcd:"#6b4d00"},
-      {id:6,cat:"huile",lbl:"Oil",emoji:"🫙",name:"Precious Argan Oil",image:"",badge:"",bc:"",bcd:""},
-      {id:7,cat:"savon",lbl:"Soap",emoji:"🧼",name:"Papaya & Carrot Glow Soap",image:"",badge:"Popular",bc:"#D4A017",bcd:"#8a6500"},
-      {id:8,cat:"savon",lbl:"Soap",emoji:"🧼",name:"Black Soap Shea Butter",image:"",badge:"",bc:"",bcd:""},
-      {id:9,cat:"serum",lbl:"Serum",emoji:"💧",name:"Concentrated Glow Serum",image:"",badge:"Premium",bc:"#D4A017",bcd:"#8a6500"},
-      {id:10,cat:"serum",lbl:"Serum",emoji:"💧",name:"Targeted Dark Spot Serum",image:"",badge:"",bc:"",bcd:""},
-      {id:11,cat:"creme",lbl:"Cream",emoji:"🌸",name:"Day Cream SPF 50",image:"",badge:"SPF 50",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:12,cat:"creme",lbl:"Cream",emoji:"🌸",name:"Regenerating Night Cream",image:"",badge:"Night",bc:"#3A1900",bcd:"#1e0e00"},
-      {id:13,cat:"huile",lbl:"Oil",emoji:"🫙",name:"Multi-Purpose Coconut Oil",image:"",badge:"",bc:"",bcd:""},
-      {id:14,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Shea Butter & Honey Lotion",image:"",badge:"",bc:"",bcd:""},
-      {id:15,cat:"savon",lbl:"Soap",emoji:"🧼",name:"Turmeric & Aloe Vera Soap",image:"",badge:"Anti-acne",bc:"#D4A017",bcd:"#8a6500"},
-      {id:16,cat:"huile",lbl:"Oil",emoji:"🫙",name:"Active Glow & Collagen Oil",image:"",badge:"Glow ✨",bc:"#F9C820",bcd:"#c09510"},
-      {id:17,cat:"creme",lbl:"Cream",emoji:"🌸",name:"Hand & Nail Repair Cream",image:"",badge:"",bc:"",bcd:""},
-      {id:18,cat:"serum",lbl:"Serum",emoji:"💧",name:"Lip Plumping Serum",image:"",badge:"",bc:"",bcd:""},
-      {id:19,cat:"lait",lbl:"Body Lotion",emoji:"🥛",name:"Aloe Vera Sensitive Skin Lotion",image:"",badge:"Sensitive",bc:"#A87800",bcd:"#6b4d00"},
-      {id:20,cat:"savon",lbl:"Soap",emoji:"🧼",name:"Glycerin Glow Soap",image:"",badge:"",bc:"",bcd:""},
-      {id:21,cat:"huile",lbl:"Oil",emoji:"🫙",name:"Castor Oil Hair & Brows",image:"",badge:"Hair",bc:"#3A1900",bcd:"#1e0e00"},
-      {id:22,cat:"creme",lbl:"Cream",emoji:"🌸",name:"Eye Contour Cream",image:"",badge:"",bc:"",bcd:""},
-      {id:23,cat:"autre",lbl:"Mask",emoji:"🌟",name:"Purifying Clay Mask",image:"",badge:"Glow boost",bc:"#A87800",bcd:"#6b4d00"},
-      {id:24,cat:"autre",lbl:"Mist",emoji:"🌟",name:"Rose Water Setting Mist",image:"",badge:"",bc:"",bcd:""},
-      {id:25,cat:"autre",lbl:"Shower Gel",emoji:"🌟",name:"Coconut Exfoliating Shower Gel",image:"",badge:"Body",bc:"#E05C14",bcd:"#9e3e0d"},
-      {id:26,cat:"autre",lbl:"Beauty Kit",emoji:"🎁",name:"Complete Beauty Kit — Gift",image:"",badge:"Gift 🎁",bc:"#D4A017",bcd:"#8a6500"}
-    ]
+    btn_detail:"👁 View",btn_cmd:"⭐ Order",
   }
 };
 
-let lang='fr',activeFilter='all';
+let lang='fr', activeFilter='all';
 
-function buildWaGen(){ return `https://wa.me/${WA}?text=${encodeURIComponent(T[lang].wa_gen)}`; }
-function buildWaProd(p){ return `https://wa.me/${WA}?text=${encodeURIComponent(T[lang].wa_pre+p.name+T[lang].wa_suf)}`; }
+function waGen(){ return `https://wa.me/${WA}?text=${encodeURIComponent(T[lang].wa_gen)}`; }
+function waProd(p){ return `https://wa.me/${WA}?text=${encodeURIComponent(T[lang].wa_pre+p.name+T[lang].wa_suf)}`; }
 
 function updateWaLinks(){
-  const url=buildWaGen();
+  const url=waGen();
   ['float-wa','nav-cta-link','hero-cta','contact-cta','mob-cta-link'].forEach(id=>{
-    const el=document.getElementById(id); if(el) el.href=url;
+    const el=document.getElementById(id);if(el)el.href=url;
   });
 }
 
-function applyTranslations(){
+function applyT(){
   const t=T[lang];
   document.querySelectorAll('[data-t]').forEach(el=>{
     const k=el.dataset.t;
-    if(t[k]!==undefined) el.innerHTML=t[k];
+    if(t[k]!==undefined)el.innerHTML=t[k];
   });
-  const mwaTxt=document.getElementById('m-wa-txt');
-  if(mwaTxt) mwaTxt.innerHTML=t.modal_btn;
+  const mwt=document.getElementById('m-wa-txt');
+  if(mwt)mwt.innerHTML=t.modal_btn;
   updateWaLinks();
 }
 
@@ -501,32 +950,31 @@ function setLang(l){
   lang=l;
   ['btn-fr','btn-fr-m'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('active',l==='fr')});
   ['btn-en','btn-en-m'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('active',l==='en')});
-  applyTranslations();
+  applyT();
   renderProducts(activeFilter);
 }
 
 function renderProducts(filter='all'){
   activeFilter=filter;
   const grid=document.getElementById('products-grid');
-  const data=T[lang].products;
+  const data=PRODUCTS[lang];
   const list=filter==='all'?data:data.filter(p=>p.cat===filter);
   const t=T[lang];
-  const WA_ICO=`<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
   grid.innerHTML=list.map((p,i)=>`
-    <div class="pcard" style="animation-delay:${(i%10)*.055}s;">
-      ${p.badge?`<div class="ribbon" style="background:${p.bc};color:${p.bc==='#F9C820'?'#12090A':'#fff'};">${p.badge}</div><style>.pcard:nth-child(${i+1}) .ribbon::after{border-color:${p.bcd} transparent transparent transparent}</style>`:''}
+    <div class="pcard" style="animation-delay:${(i%10)*.05}s">
+      ${p.badge?`<div class="ribbon" style="background:${p.bc||'var(--g2)'};color:${p.bc==='#F9C820'||!p.bc?'var(--dk)':'#fff'}">${p.badge}</div>`:''}
       <div class="pcard-img">
-        ${p.image?`<img src="${p.image}" alt="${p.name}" loading="lazy"/>`:`<div class="pcard-ph"><span style="font-size:3rem;line-height:1;">${p.emoji}</span><span style="font-size:.58rem;color:var(--g3);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:'Cinzel',serif;opacity:.6;">+ image</span></div>`}
+        <img src="${p.image}" alt="${p.name}" loading="lazy"/>
         <div class="pcard-ov">
           <button class="ov-detail" onclick="openModal(${p.id})">${t.btn_detail}</button>
-          <a href="${buildWaProd(p)}" target="_blank" rel="noopener" class="ov-cmd">${t.btn_cmd}</a>
+          <a href="${waProd(p)}" target="_blank" rel="noopener" class="ov-cmd">${t.btn_cmd}</a>
         </div>
       </div>
       <div class="pcard-body">
         <div class="pcat">${p.lbl}</div>
         <div class="pname">${p.name}</div>
-        <a href="${buildWaProd(p)}" target="_blank" rel="noopener" class="cmd-btn">${WA_ICO} ${t.btn_cmd}</a>
+        <a href="${waProd(p)}" target="_blank" rel="noopener" class="cmd-btn">${WA_ICO} ${t.btn_cmd}</a>
       </div>
     </div>`).join('');
 }
@@ -538,45 +986,56 @@ function filterCat(cat,btn){
 }
 
 function openModal(id){
-  const p=T[lang].products.find(x=>x.id===id);
+  const p=PRODUCTS[lang].find(x=>x.id===id);
   if(!p)return;
   document.getElementById('m-cat').textContent=p.lbl;
   document.getElementById('m-name').textContent=p.name;
-  document.getElementById('m-wa').href=buildWaProd(p);
-  const mwaTxt=document.getElementById('m-wa-txt');
-  if(mwaTxt)mwaTxt.innerHTML=T[lang].modal_btn;
+  document.getElementById('m-wa').href=waProd(p);
+  const mwt=document.getElementById('m-wa-txt');
+  if(mwt)mwt.innerHTML=T[lang].modal_btn;
   const wrap=document.getElementById('m-img');
-  wrap.innerHTML=p.image?`<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;"/>`:`<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--pale),var(--soft));"><span style="font-size:5rem;line-height:1;">${p.emoji}</span><span style="font-size:.75rem;color:var(--g3);font-weight:700;font-family:'Cinzel',serif;">${p.lbl}</span></div>`;
+  wrap.innerHTML=`<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover"/>`;
   document.getElementById('modal-bg').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeModalOutside(e){if(e.target===document.getElementById('modal-bg'))closeModal();}
-function closeModal(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target===document.getElementById('modal-bg'))closeModal()}
+function closeModal(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
+/* ── NAV ── */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>50));
-
 let navOpen=false;
-function toggleNav(){navOpen=!navOpen;document.getElementById('mnav').classList.toggle('hidden',!navOpen);}
+function toggleNav(){
+  navOpen=!navOpen;
+  document.getElementById('ham').classList.toggle('open',navOpen);
+  document.getElementById('mnav').classList.toggle('open',navOpen);
+}
+function closeNav(){
+  navOpen=false;
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mnav').classList.remove('open');
+}
 
+/* ── STARS ── */
 function createStars(){
   const c=document.getElementById('stc');
   const sh=['⭐','✦','✧','★','✨'];
-  for(let i=0;i<18;i++){
+  for(let i=0;i<16;i++){
     const s=document.createElement('div');s.className='star-p';
-    const sz=(Math.random()*.7+.45).toFixed(2);
-    const lft=(Math.random()*100).toFixed(1);
-    const dly=(Math.random()*10).toFixed(1);
-    const dur=(Math.random()*12+10).toFixed(1);
-    s.style.cssText=`left:${lft}%;bottom:-2%;animation-duration:${dur}s;animation-delay:${dly}s;font-size:${sz}rem;`;
+    s.style.cssText=`left:${(Math.random()*100).toFixed(1)}%;bottom:-2%;animation-duration:${(Math.random()*12+10).toFixed(1)}s;animation-delay:${(Math.random()*10).toFixed(1)}s;font-size:${(Math.random()*.65+.4).toFixed(2)}rem;`;
     s.textContent=sh[Math.floor(Math.random()*sh.length)];
     c.appendChild(s);
   }
 }
 
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';io.unobserve(e.target);}});},{threshold:.1});
-document.querySelectorAll('.feat,.stat-box').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity .55s ease, transform .55s ease';io.observe(el);});
+/* ── REVEAL ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-applyTranslations();
+/* ── INIT ── */
+applyT();
 renderProducts();
 createStars();
 </script>
