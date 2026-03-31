@@ -25,7 +25,6 @@ body{font-family:'Jost',sans-serif;background:var(--cr);color:var(--dk2);overflo
 ::-webkit-scrollbar-thumb{background:var(--g2);border-radius:10px}
 img{display:block;max-width:100%}
 
-/* ── TYPOGRAPHY ── */
 .cinzel{font-family:'Cinzel',serif}
 .italiana{font-family:'Italiana',serif}
 
@@ -303,7 +302,6 @@ img{display:block;max-width:100%}
   margin-top:8px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;
 }
 
-/* FILTER TABS */
 .cat-filters{
   display:flex;flex-wrap:wrap;justify-content:center;
   gap:8px;margin-bottom:clamp(22px,3vw,36px);
@@ -324,7 +322,6 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 16px rgba(212,160,23,.32);
 }
 
-/* PRODUCTS GRID */
 #products-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -335,7 +332,6 @@ img{display:block;max-width:100%}
 @media(max-width:560px){#products-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 @media(max-width:340px){#products-grid{grid-template-columns:1fr}}
 
-/* PRODUCT CARD */
 .pcard{
   background:var(--warm);border:1px solid var(--bdr);
   border-radius:16px;overflow:hidden;
@@ -418,7 +414,7 @@ img{display:block;max-width:100%}
 }
 .cmd-btn:hover{transform:scale(1.04);box-shadow:0 5px 18px rgba(212,160,23,.42)}
 
-/* ── ABOUT ── */
+/* ── ABOUT (with manager photos) ── */
 #apropos{
   background:linear-gradient(150deg,#110800 0%,#1E0F00 45%,#3A1900 80%,#6B3E00 100%);
   position:relative;overflow:hidden;
@@ -430,39 +426,150 @@ img{display:block;max-width:100%}
   background:radial-gradient(circle,rgba(212,160,23,.07),transparent 70%);
   pointer-events:none;
 }
-.about-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1}
+#apropos::after{
+  content:'';position:absolute;bottom:-20%;left:-10%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,123,12,.05),transparent 70%);
+  pointer-events:none;
+}
+.about-inner{
+  max-width:1080px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:clamp(32px,5vw,60px);
+  align-items:center;
+}
+@media(max-width:780px){
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:clamp(28px,4vw,44px);
+  }
+}
+
+/* Photo composition */
+.about-photos{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:clamp(280px,40vw,440px);
+}
+.about-photo-main{
+  position:relative;
+  z-index:2;
+  width:clamp(200px,28vw,300px);
+  height:clamp(280px,38vw,420px);
+  border-radius:20px;
+  overflow:hidden;
+  border:2px solid rgba(245,204,69,.35);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.5),
+    0 0 0 1px rgba(245,204,69,.1),
+    inset 0 0 40px rgba(0,0,0,.15);
+  transform:rotate(-3deg);
+  transition:transform .4s ease;
+}
+.about-photo-main:hover{transform:rotate(0deg) scale(1.02)}
+.about-photo-main img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.about-photo-main:hover img{transform:scale(1.06)}
+
+.about-photo-sec{
+  position:absolute;
+  z-index:3;
+  width:clamp(140px,20vw,210px);
+  height:clamp(180px,26vw,280px);
+  border-radius:16px;
+  overflow:hidden;
+  border:2px solid rgba(245,204,69,.45);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.55),
+    0 0 0 1px rgba(245,204,69,.12);
+  transform:rotate(5deg);
+  transition:transform .4s ease;
+  bottom:clamp(-10px,-2vw,0px);
+  right:clamp(-10px,-2vw,0px);
+}
+.about-photo-sec:hover{transform:rotate(0deg) scale(1.03)}
+.about-photo-sec img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.about-photo-sec:hover img{transform:scale(1.06)}
+
+/* Decorative frame behind photos */
+.about-photo-deco{
+  position:absolute;
+  z-index:1;
+  width:clamp(240px,34vw,350px);
+  height:clamp(300px,42vw,460px);
+  border:1.5px solid rgba(245,204,69,.15);
+  border-radius:22px;
+  transform:rotate(2deg);
+}
+
+/* Star badge on photo */
+.about-photo-badge{
+  position:absolute;
+  z-index:5;
+  top:-12px;left:50%;
+  transform:translateX(-50%);
+  background:var(--cta);
+  color:var(--dk);
+  font-family:'Cinzel',serif;
+  font-size:.55rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:6px 16px;
+  border-radius:50px;
+  white-space:nowrap;
+  box-shadow:0 4px 16px rgba(212,160,23,.5);
+}
+
+.about-text{text-align:left}
+@media(max-width:780px){.about-text{text-align:center}}
 .about-title{
   font-family:'Italiana',serif;
   font-size:clamp(1.9rem,4.5vw,3.2rem);
-  color:#fff;line-height:1.1;margin:12px 0 18px;
+  color:#fff;line-height:1.1;margin:0 0 18px;
 }
 .about-title em{color:var(--g1);font-style:italic}
 .about-p{
   color:rgba(255,255,255,.58);
   font-size:clamp(.84rem,1.8vw,.96rem);
-  line-height:1.88;max-width:580px;margin:0 auto 14px;
+  line-height:1.88;max-width:520px;margin:0 0 14px;
 }
+@media(max-width:780px){.about-p{margin-left:auto;margin-right:auto}}
 .about-p strong{color:var(--g1)}
 .about-p2{
   color:rgba(255,255,255,.38);
   font-size:clamp(.8rem,1.6vw,.88rem);
-  line-height:1.75;max-width:500px;margin:0 auto 40px;
+  line-height:1.75;max-width:480px;margin:0 0 32px;
 }
+@media(max-width:780px){.about-p2{margin-left:auto;margin-right:auto}}
 .about-p2 strong{color:rgba(255,255,255,.82)}
+
 .stats-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,2vw,16px);
+  display:flex;flex-wrap:wrap;gap:clamp(8px,1.5vw,14px);
 }
+@media(max-width:780px){.stats-grid{justify-content:center}}
 .stat-box{
-  text-align:center;padding:18px clamp(18px,3vw,28px);
+  text-align:center;padding:14px clamp(14px,2.5vw,22px);
   border-radius:14px;
   background:rgba(255,255,255,.05);border:1px solid rgba(245,204,69,.14);
-  transition:background .22s,border-color .22s;min-width:120px;
+  transition:background .22s,border-color .22s;min-width:100px;
 }
 .stat-box:hover{background:rgba(255,255,255,.09);border-color:rgba(245,204,69,.26)}
-.stat-val{font-family:'Italiana',serif;font-size:1.85rem;color:var(--g1);line-height:1}
+.stat-val{font-family:'Italiana',serif;font-size:1.6rem;color:var(--g1);line-height:1}
 .stat-lbl{
-  font-family:'Cinzel',serif;font-size:.58rem;
-  color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;margin-top:6px;
+  font-family:'Cinzel',serif;font-size:.52rem;
+  color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;margin-top:5px;
 }
 
 /* ── CONTACT ── */
@@ -600,6 +707,20 @@ footer{
   transition:opacity .55s ease,transform .55s ease;
 }
 .reveal.visible{opacity:1;transform:none}
+
+/* ── ABOUT PHOTO ANIM ── */
+@keyframes photoFloat{
+  0%,100%{transform:rotate(-3deg) translateY(0)}
+  50%{transform:rotate(-3deg) translateY(-6px)}
+}
+@keyframes photoFloat2{
+  0%,100%{transform:rotate(5deg) translateY(0)}
+  50%{transform:rotate(5deg) translateY(-8px)}
+}
+.about-photo-main{animation:photoFloat 6s ease-in-out infinite}
+.about-photo-sec{animation:photoFloat2 7s ease-in-out infinite}
+.about-photo-main:hover{animation:none;transform:rotate(0deg) scale(1.02)}
+.about-photo-sec:hover{animation:none;transform:rotate(0deg) scale(1.03)}
 </style>
 </head>
 <body>
@@ -746,28 +867,47 @@ footer{
       <button class="ctab on" onclick="filterCat('all',this)"  data-t="cat_all">⭐ Tout voir</button>
       <button class="ctab" onclick="filterCat('huile',this)"   data-t="cat_huile">🫙 Huiles</button>
       <button class="ctab" onclick="filterCat('lait',this)"    data-t="cat_lait">🥛 Laits corps</button>
-      <button class="ctab" onclick="filterCat('autre',this)"   data-t="cat_autre">✨ Autres</button>
+      <button class="ctab" onclick="filterCat('autre',this)"   data-t="cat_autre":"✨ Autres"></button>
     </div>
 
     <div id="products-grid"></div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT avec photos de la gérante -->
 <section id="apropos">
   <div class="about-inner reveal">
-    <div class="sec-lbl" style="color:var(--g1)" data-t="about_lbl">✦ Notre histoire</div>
-    <h2 class="about-title">
-      <em>GINETTE Star Girl</em><br/>
-      <span data-t="about_sub">votre boutique beauté à Douala</span>
-    </h2>
-    <p class="about-p" data-t="about_p1">Chez <strong>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.</p>
-    <p class="about-p2" data-t="about_p2">Basés à <strong>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.</p>
-    <div class="stats-grid">
-      <div class="stat-box"><div class="stat-val" data-t="stat_a1">Varié</div><div class="stat-lbl" data-t="stat_a1_lbl">Grande gamme</div></div>
-      <div class="stat-box"><div class="stat-val">500+</div><div class="stat-lbl" data-t="stat_a2_lbl">Clientes satisfaites</div></div>
-      <div class="stat-box"><div class="stat-val">Douala</div><div class="stat-lbl" data-t="stat_a3_lbl">Notre ville</div></div>
-      <div class="stat-box"><div class="stat-val">7j/7</div><div class="stat-lbl" data-t="stat_a4_lbl">Disponibilité</div></div>
+    <div class="about-grid">
+
+      <!-- COLONNE PHOTOS -->
+      <div class="about-photos">
+        <div class="about-photo-deco"></div>
+        <div class="about-photo-main">
+          <img src="/Ginette Cos1.jpeg" alt="GINETTE — Gérante Star Girl Beauty Cosmetics" loading="lazy"/>
+        </div>
+        <div class="about-photo-sec">
+          <img src="/Ginette Cos2.jpeg" alt="GINETTE — Star Girl Beauty Cosmetics Douala" loading="lazy"/>
+        </div>
+        <div class="about-photo-badge" data-t="about_badge">⭐ La Fondatrice</div>
+      </div>
+
+      <!-- COLONNE TEXTE -->
+      <div class="about-text">
+        <div class="sec-lbl" style="color:var(--g1)" data-t="about_lbl">✦ Notre histoire</div>
+        <h2 class="about-title">
+          <em>GINETTE Star Girl</em><br/>
+          <span data-t="about_sub">votre boutique beauté à Douala</span>
+        </h2>
+        <p class="about-p" data-t="about_p1">Chez <strong>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.</p>
+        <p class="about-p2" data-t="about_p2">Basés à <strong>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.</p>
+        <div class="stats-grid">
+          <div class="stat-box"><div class="stat-val" data-t="stat_a1">Varié</div><div class="stat-lbl" data-t="stat_a1_lbl">Grande gamme</div></div>
+          <div class="stat-box"><div class="stat-val">500+</div><div class="stat-lbl" data-t="stat_a2_lbl">Clientes satisfaites</div></div>
+          <div class="stat-box"><div class="stat-val">Douala</div><div class="stat-lbl" data-t="stat_a3_lbl">Notre ville</div></div>
+          <div class="stat-box"><div class="stat-val">7j/7</div><div class="stat-lbl" data-t="stat_a4_lbl">Disponibilité</div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -821,7 +961,6 @@ footer{
 const WA="237694375683";
 const WA_ICO=`<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
-/* ── PRODUCTS: only those with real images ── */
 const PRODUCTS = {
   fr:[
     {id:1, cat:"huile", lbl:"Huile",      name:"Huile Whitening 7 Days",          image:"Photo1.jpeg",  badge:"",          bc:"",        bcd:""},
@@ -845,10 +984,10 @@ const PRODUCTS = {
     {id:2, cat:"lait",  lbl:"Body Lotion",name:"Pro Lab Lotion",                   image:"Photo2.jpeg",  badge:"",          bc:"",        bcd:""},
     {id:3, cat:"lait",  lbl:"Body Lotion",name:"Brightening Body Lotion",          image:"Photo3.jpeg",  badge:"",          bc:"",        bcd:""},
     {id:4, cat:"lait",  lbl:"Body Lotion",name:"Carrot Moisturizing Lotion",       image:"Photo4.jpeg",  badge:"",          bc:"",        bcd:""},
-    {id:5, cat:"huile", lbl:"Oil",        name:"Glow Booster Lightening Oil",      image:"photo5.jpeg",  badge:"",          bc:"",        bcd:""},
-    {id:6, cat:"lait",  lbl:"Body Lotion",name:"Aqua Rich Body Lotion",            image:"photo6.jpeg",  badge:"",          bc:"",        bcd:""},
-    {id:7, cat:"lait",  lbl:"Body Lotion",name:"Olay Body Lotion",                 image:"photo7.jpeg",  badge:"Popular",   bc:"#D4A017", bcd:"#8a6500"},
-    {id:8, cat:"huile", lbl:"Oil",        name:"Cocoa Butter Formula Body Oil",    image:"photo8.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:5, cat:"huile", lbl:"Oil",        name:"Glow Booster Lightening Oil",      image:"Photo5.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:6, cat:"lait",  lbl:"Body Lotion",name:"Aqua Rich Body Lotion",            image:"Photo6.jpeg",  badge:"",          bc:"",        bcd:""},
+    {id:7, cat:"lait",  lbl:"Body Lotion",name:"Olay Body Lotion",                 image:"Photo7.jpeg",  badge:"Popular",   bc:"#D4A017", bcd:"#8a6500"},
+    {id:8, cat:"huile", lbl:"Oil",        name:"Cocoa Butter Formula Body Oil",    image:"Photo8.jpeg",  badge:"",          bc:"",        bcd:""},
     {id:9, cat:"autre", lbl:"Shower Gel", name:"Shower Bath Gel",                  image:"photo9.jpeg",  badge:"",          bc:"",        bcd:""},
     {id:10,cat:"huile", lbl:"Oil",        name:"Glow Bliss",                       image:"photo10.jpeg", badge:"",          bc:"",        bcd:""},
     {id:11,cat:"lait",  lbl:"Body Lotion",name:"Dove Body Love",                   image:"photo11.jpeg", badge:"SPF 50",    bc:"#E05C14", bcd:"#9e3e0d"},
@@ -859,7 +998,6 @@ const PRODUCTS = {
   ]
 };
 
-/* ── TRANSLATIONS ── */
 const T={
   fr:{
     nav_cat:"Catalogue",nav_about:"À propos",nav_contact:"Contact",lang_label:"Langue :",
@@ -877,7 +1015,7 @@ const T={
     sec_lbl_prod:"✦ Notre sélection",sec_title_prod:"Catalogue Beauté",
     catalogue_sub:"Cliquez sur <strong>« Commander »</strong> pour nous écrire sur WhatsApp et finaliser votre commande.",
     cat_all:"⭐ Tout voir",cat_huile:"🫙 Huiles",cat_lait:"🥛 Laits corps",cat_autre:"✨ Autres",
-    about_lbl:"✦ Notre histoire",about_sub:"votre boutique beauté à Douala",
+    about_lbl:"✦ Notre histoire",about_sub:"votre boutique beauté à Douala",about_badge:"⭐ La Fondatrice",
     about_p1:"Chez <strong>GINETTE Star Girl Beauty Cosmetics</strong>, nous vous proposons une sélection exclusive de produits cosmétiques haut de gamme. Notre mission : vous offrir ce qu'il y a de mieux pour sublimer votre beauté au quotidien.",
     about_p2:"Basés à <strong>Douala</strong>, nous vous répondons directement via WhatsApp pour vous guider vers les produits qui vous correspondent.",
     stat_a1:"Varié",stat_a1_lbl:"Grande gamme",stat_a2_lbl:"Clientes satisfaites",stat_a3_lbl:"Notre ville",stat_a4_lbl:"Disponibilité",
@@ -907,7 +1045,7 @@ const T={
     sec_lbl_prod:"✦ Our selection",sec_title_prod:"Beauty Catalogue",
     catalogue_sub:"Click <strong>\"Order\"</strong> to message us on WhatsApp and finalize your purchase.",
     cat_all:"⭐ All",cat_huile:"🫙 Oils",cat_lait:"🥛 Body Lotions",cat_autre:"✨ Others",
-    about_lbl:"✦ Our story",about_sub:"your beauty boutique in Douala",
+    about_lbl:"✦ Our story",about_sub:"your beauty boutique in Douala",about_badge:"⭐ The Founder",
     about_p1:"At <strong>GINETTE Star Girl Beauty Cosmetics</strong>, we offer an exclusive selection of premium cosmetics. Our mission: to give you the best to enhance your everyday beauty.",
     about_p2:"Based in <strong>Douala</strong>, we respond directly via WhatsApp to guide you to the products that suit you.",
     stat_a1:"Varied",stat_a1_lbl:"Wide range",stat_a2_lbl:"Satisfied clients",stat_a3_lbl:"Our city",stat_a4_lbl:"Availability",
@@ -1002,7 +1140,6 @@ function closeModalOutside(e){if(e.target===document.getElementById('modal-bg'))
 function closeModal(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-/* ── NAV ── */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>50));
 let navOpen=false;
 function toggleNav(){
@@ -1016,7 +1153,6 @@ function closeNav(){
   document.getElementById('mnav').classList.remove('open');
 }
 
-/* ── STARS ── */
 function createStars(){
   const c=document.getElementById('stc');
   const sh=['⭐','✦','✧','★','✨'];
@@ -1028,13 +1164,11 @@ function createStars(){
   }
 }
 
-/* ── REVEAL ── */
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ── INIT ── */
 applyT();
 renderProducts();
 createStars();
